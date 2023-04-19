@@ -1,0 +1,122 @@
+@use 'elements/reset';
+@use 'elements/global';
+@use 'settings/color' as color;
+@use 'settings/font-family' as font-family;
+@use 'settings/font-weight' as font-weight;
+@use 'tools/mixin';
+
+.header {
+    background-color: color.$dark-gray;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+    z-index: -1;
+    font-size: 18px;
+}
+
+.header__gradient {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    background-image: linear-gradient(color.$black, color.$dark-blue);
+    z-index: -1;
+}
+
+.header__logo {
+    object-fit: contain;
+    margin: 0px 25px;
+}
+
+//navigation bar
+.header__nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 45%;
+    padding-left: 20px;
+    flex-direction: row;
+    color: color.$white;
+}
+
+//menu item
+.header__menu {
+    position: relative;
+    display: inline-block;
+    color: color.$white;
+
+    &-item {
+        cursor: pointer;
+        height: 60px;
+        @include mixin.center;
+        padding: 0px 30px 0px 10px;
+    }
+}
+
+//dropdown
+.header__dropdown {
+    display: none;
+    position: absolute;
+    height: 100px;
+    min-width: 145px;
+    z-index: 1;
+
+    #{&}-item {
+        background-image: linear-gradient(color.$dark-gray, color.$black);
+        padding: 8px 10px;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            background-image: linear-gradient(color.$primary, color.$dark-blue);
+        }
+    }
+}
+
+//display dropdown when a menu item is hovered
+.header__menu:hover .header__dropdown {
+    display: block;
+}
+
+.header__btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 70px;
+}
+
+//button
+.btn {
+    margin: 0 5px;
+    width: 210px;
+    background-image: linear-gradient(color.$secondary, color.$primary);
+    @include mixin.center;
+    flex-direction: column;
+    color: color.$white;
+    border-radius: 0px 0px 5px 5px;
+
+    &__heading {
+        font-size: 20px;
+        opacity: 0.5;
+        font-weight: font-weight.$bold;
+        margin-top: -1px;
+    }
+    &__subheading-container {
+        @include mixin.center;
+        flex-direction: row;
+        margin-top: -2px;
+
+        &__subheading--small {
+            font-size: 16px;
+        }
+    }
+}
+
+//change style of button when hovered
+.btn:hover {
+    background-image: linear-gradient(color.$primary, color.$dark-blue);
+}
+
