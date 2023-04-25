@@ -109,13 +109,11 @@
   }
   &__subheading--small {
     font-size: 16px;
-    cursor: pointer;
   }
 }
 
 //change style of button when hovered
 .btn:hover {
   background-image: linear-gradient(color.$primary, color.$dark-blue);
-  cursor: pointer;
 }
 
