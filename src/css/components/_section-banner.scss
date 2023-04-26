@@ -61,10 +61,11 @@
   font-weight: font-weight.$bold;
   font-size: 28px;
   line-height: function.getem(28, 40);
+  margin-bottom: 5px;
 }
 
 .banner__subtitle {
-  font-weight: font-weight.$medium;
+  font-weight: font-weight.$regular;
   font-size: 18px;
   line-height: function.getem(18, 30);
 }
