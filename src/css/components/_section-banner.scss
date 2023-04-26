@@ -77,7 +77,7 @@
 }
 
 .banner__subtitle {
-  font-weight: font-weight.$medium;
+  font-weight: font-weight.$regular;
   font-size: 18px;
   line-height: function.getem(9, 15);
   @include media-query.sp {
