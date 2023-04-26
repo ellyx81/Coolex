@@ -1,4 +1,5 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
 
@@ -12,6 +13,11 @@
   flex-direction: column;
 }
 
+.banner__top-container {
+  width: 100%;
+  position: relative;
+}
+
 .banner__image {
   width: 100%;
 }
@@ -19,12 +25,14 @@
 //slider buttons
 .banner__slider {
   position: absolute;
-  top: 300px;
+  top: 50%;
+  transform: translateY(-50%);
   padding: 0px 10px;
   width: 100%;
   
   img {
-    height: 60px;
+    height: 55px;
+    cursor: pointer;
   }
 
   &-btn:hover {
@@ -52,10 +60,11 @@
 .banner__title {
   font-weight: font-weight.$bold;
   font-size: 28px;
-  line-height: 1.7;
+  line-height: function.getem(28, 40);
 }
 
 .banner__subtitle {
-  font-weight: font-weight.$regular;
+  font-weight: font-weight.$medium;
   font-size: 18px;
+  line-height: function.getem(18, 30);
 }
