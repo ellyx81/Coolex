@@ -43,10 +43,32 @@
   transition: transform 0.3s ease;
   overflow: hidden;
 
-  &,
-  & > *,
-  & > * > * {
+  & > * {
     cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    border: none;
+
+    .solutions__img,
+    .solutions__right-arrow {
+      display: block;
+    }
+
+    .solutions__content {
+      color: color.$white;
+      transform: scale(.9);
+
+      .solutions__icon {
+        display: none;
+      }
+      
+      .solutions__icon--white {
+        display: block;
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
@@ -93,33 +115,5 @@
 
   &:hover {
     opacity: .5;
-  }
-}
-
-//when the tile is hovered
-.solutions__tile:hover {
-  transform: scale(1.1);
-  border: none;
-
-  .solutions__img {
-    display: block;
-  }
-
-  .solutions__right-arrow {
-    display: block;
-  }
-
-  .solutions__content {
-    color: color.$white;
-    transform: scale(.9);
-
-    .solutions__icon {
-      display: none;
-    }
-    
-    .solutions__icon--white {
-      display: block;
-      transform: scale(1.1);
-    }
   }
 }

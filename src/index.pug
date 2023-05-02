@@ -1,7 +1,7 @@
 extends includes/layout.pug
 block content
   main.section
-    .banner
+    section.banner
       .banner__top-container
         img(src='assets/banner-image.png', alt="").banner__image
         .banner__slider
@@ -13,21 +13,13 @@ block content
           h2.banner__subtitle COOLEXは最も効率的かつ効果的な冷却ソリューション! #[br]
             | お客様の作業現場・目的に合わせたラインアップを豊富に揃えています
 
-    .solutions 
+    section.solutions 
       .title
         .title__decoration
-        h1.title__text どんな用途でお悩みですか？
+        h2.title__text どんな用途でお悩みですか？
         .title__decoration.title__decoration--right
       .solutions__container 
-        mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title)
-          .solutions__tile
-            img(src= solutionsImg, alt="").solutions__img 
-            .solutions__content 
-              img(src= solutionsIcon, alt="").solutions__icon
-              img(src= solutionsWhiteIcon, alt="").solutions__icon--white
-              p.solutions__subtitle!= subtitle
-              p.solutions__title= title 
-            img(src="assets/arrow-right-01.svg", alt="").solutions__right-arrow
+        include includes/mixin.pug
         +solutions("assets/photo-1.png", "assets/1.svg", "assets/1-white.svg", "熱源があり <br> 輻射熱の影響を受ける", "鉄鋼工場")
         +solutions("assets/photo-2.png", "assets/2.svg", "assets/2-white.svg", "衛生服とマスクが必須で <br> 蒸し暑い", "食品工場")
         +solutions("assets/photo-3.png", "assets/3.svg", "assets/3-white.svg", "大量の粉塵・ <br> ヒュームが発生する", "溶接作業")
