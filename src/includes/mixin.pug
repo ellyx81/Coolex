@@ -1,3 +1,9 @@
+mixin title(text)
+  .title
+    .title__decoration
+    h2.title__text= text 
+    .title__decoration.title__decoration--right
+
 mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title)
   a(href="#").solutions__tile
     img(src= solutionsImg, alt="").solutions__img 
@@ -7,3 +13,17 @@ mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title
       p.solutions__subtitle!= subtitle
       p.solutions__title= title 
     img(src="assets/arrow-right-01.svg", alt="").solutions__right-arrow
+
+mixin case-study(image, title, subtitle, bottomSubtitle)
+  a(href="#").case-studies__item
+    img(src= image, alt="").case-studies__img
+    .case-studies__overlay
+      h2.case-studies__title= title
+      span.case-studies__subtitle= subtitle
+      .case-studies__lower-text
+        span.case-studies__subtitle!= bottomSubtitle
+
+mixin see-all-btn(text) 
+  a(href="#").see-all-btn
+    img(src="assets/arrow-right-blue-01.svg", alt="").see-all-btn__icon
+    .see-all-btn__text= text
