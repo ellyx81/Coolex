@@ -86,6 +86,7 @@
   color: color.$white;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 
   &__heading {
     font-size: 20px;
@@ -111,6 +112,6 @@
 
 //change style of button when hovered
 .btn:hover {
-  background-image: linear-gradient(color.$primary, color.$dark-blue);
+  transform: scale(.9);
 }
 
