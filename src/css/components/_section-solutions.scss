@@ -1,0 +1,125 @@
+@use 'tools/mixin' as mixin;
+@use 'settings/color' as color;
+@use 'section-banner';
+
+.solutions {
+  @include mixin.center;
+  flex-direction: column;
+}
+
+.title {
+  @include mixin.center;
+  width: 100%;
+  padding: 60px 0px 40px 0px;
+
+  &__text {
+    @extend .banner__title;
+    color: color.$primary;
+    margin: 0px 20px
+  }
+
+  &__decoration {
+    height: 28px;
+    width: calc(28*2) + px;
+    background: linear-gradient(to right, color.$primary 50%, color.$secondary 50%);
+  
+    &--right {
+      background: linear-gradient(to right, color.$secondary 50%, color.$primary 50%);
+    }
+  }
+}
+
+.solutions__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.solutions__tile {
+  height: 200px;
+  border: 1px solid color.$gray;
+  background: linear-gradient(color.$white, color.$light-gray);
+  padding: 25px 0px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+
+  &,
+  & > *,
+  & > * > * {
+    cursor: pointer;
+  }
+}
+
+.solutions__img {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.solutions__content {
+  @include mixin.center;
+  flex-direction: column;
+  text-align: center;
+  color: color.$primary;
+}
+
+.solutions__icon {
+  height: 57px;
+  margin-bottom: 10px;
+}
+
+.solutions__icon--white {
+  @extend .solutions__icon;
+  display: none;
+}
+
+.solutions__subtitle {
+  font-size: 18px;
+}
+
+.solutions__title {
+  font-size: 25px;
+}
+
+.solutions__right-arrow {
+  display: none;
+  position: absolute;
+  right: 23px;
+  top: 45%;
+  height: 34px;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+//when the tile is hovered
+.solutions__tile:hover {
+  transform: scale(1.1);
+  border: none;
+
+  .solutions__img {
+    display: block;
+  }
+
+  .solutions__right-arrow {
+    display: block;
+  }
+
+  .solutions__content {
+    color: color.$white;
+    transform: scale(.9);
+
+    .solutions__icon {
+      display: none;
+    }
+    
+    .solutions__icon--white {
+      display: block;
+      transform: scale(1.1);
+    }
+  }
+}
