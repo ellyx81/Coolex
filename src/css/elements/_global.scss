@@ -15,3 +15,9 @@ html {
     min-width: 100%;
   }
 }
+
+body,
+header {
+  max-width: 1920px;
+  margin: auto;
+}

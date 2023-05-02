@@ -10,12 +10,12 @@
 .title {
   @include mixin.center;
   width: 100%;
-  padding: 60px 0px 40px 0px;
+  padding: 60px 0 40px 0;
 
   &__text {
     @extend .banner__title;
     color: color.$primary;
-    margin: 0px 20px
+    margin: 0 20px
   }
 
   &__decoration {
@@ -39,7 +39,7 @@
   height: 200px;
   border: 1px solid color.$gray;
   background: linear-gradient(color.$white, color.$light-gray);
-  padding: 25px 0px;
+  padding: 25px 0;
   transition: transform 0.3s ease;
   overflow: hidden;
 

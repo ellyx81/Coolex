@@ -29,7 +29,7 @@
 
   &:hover {
     .case-studies__overlay {
-      background-color: rgba(30, 67, 149, 0.6);
+      background-color: rgba(color.$primary, 0.6);
     }
   }
 }
@@ -43,9 +43,9 @@
 .case-studies__overlay {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(color.$black, 0.6);
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   height: 138px;
   color: color.$white;
