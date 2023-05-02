@@ -1,4 +1,5 @@
 extends includes/layout.pug
+include includes/mixin.pug
 block content
   main.section
     section.banner
@@ -19,7 +20,6 @@ block content
         h2.title__text どんな用途でお悩みですか？
         .title__decoration.title__decoration--right
       .solutions__container 
-        include includes/mixin.pug
         +solutions("assets/photo-1.png", "assets/1.svg", "assets/1-white.svg", "熱源があり <br> 輻射熱の影響を受ける", "鉄鋼工場")
         +solutions("assets/photo-2.png", "assets/2.svg", "assets/2-white.svg", "衛生服とマスクが必須で <br> 蒸し暑い", "食品工場")
         +solutions("assets/photo-3.png", "assets/3.svg", "assets/3-white.svg", "大量の粉塵・ <br> ヒュームが発生する", "溶接作業")
@@ -28,6 +28,6 @@ block content
         +solutions("assets/photo-6.png", "assets/6.svg", "assets/6-white.svg", "運転者の <br> 暑さ対策が難しい", "フォークリフト作業")
         +solutions("assets/photo-7.png", "assets/7.svg", "assets/7-white.svg", "とにかく安価に <br> おさえたい", "低価格モデル")
         +solutions("assets/photo-8.png", "assets/8.svg", "assets/8-white.svg", "たくさんの作業者を <br> 冷やしたい", "多人数使用モデル")
-
+        
 block script
   script(src="js/top/index.ts")

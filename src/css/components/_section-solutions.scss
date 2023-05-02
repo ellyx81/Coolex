@@ -50,6 +50,7 @@
   &:hover {
     transform: scale(1.1);
     border: none;
+    z-index: 1;
 
     .solutions__img,
     .solutions__right-arrow {
