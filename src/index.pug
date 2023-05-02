@@ -19,85 +19,23 @@ block content
         h1.title__text どんな用途でお悩みですか？
         .title__decoration.title__decoration--right
       .solutions__container 
-        mixin solutions(solutionsData)
-          a(href="#").solutions__tile
-            img(src= solutionsData.solutionsImg, alt="").solutions__img 
+        mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title)
+          .solutions__tile
+            img(src= solutionsImg, alt="").solutions__img 
             .solutions__content 
-              img(src= solutionsData.solutionsIcon, alt="").solutions__icon
-              img(src= solutionsData.solutionsWhiteIcon, alt="").solutions__icon--white
-              p.solutions__subtitle!= solutionsData.subtitle
-              p.solutions__title= solutionsData.title 
+              img(src= solutionsIcon, alt="").solutions__icon
+              img(src= solutionsWhiteIcon, alt="").solutions__icon--white
+              p.solutions__subtitle!= subtitle
+              p.solutions__title= title 
             img(src="assets/arrow-right-01.svg", alt="").solutions__right-arrow
-        - 
-          const c1 = { 
-            solutionsImg: "assets/photo-1.png", 
-            solutionsIcon: "assets/1.svg", 
-            solutionsWhiteIcon: "assets/1-white.svg", 
-            subtitle: "熱源があり <br> 輻射熱の影響を受ける", 
-            title: "鉄鋼工場" }
-        -
-          const c2 = {
-            solutionsImg: "assets/photo-2.png", 
-            solutionsIcon: "assets/2.svg", 
-            solutionsWhiteIcon: "assets/2-white.svg", 
-            subtitle: "衛生服とマスクが必須で <br> 蒸し暑い", 
-            title: "食品工場"
-          }
-        -
-          const c3 = {
-            solutionsImg: "assets/photo-3.png", 
-            solutionsIcon: "assets/3.svg", 
-            solutionsWhiteIcon: "assets/3-white.svg", 
-            subtitle: "大量の粉塵・ <br> ヒュームが発生する", 
-            title: " 溶接作業"
-          }
-        -
-          const c4 = {
-            solutionsImg: "assets/photo-4.png", 
-            solutionsIcon: "assets/4.svg", 
-            solutionsWhiteIcon: "assets/4-white.svg", 
-            subtitle: " 防爆エリアかつ風の <br> 対策ができない", 
-            title: "塗装ブース"
-          }
-        -
-          const c5 = {
-            solutionsImg: "assets/photo-5.png", 
-            solutionsIcon: "assets/5.svg", 
-            solutionsWhiteIcon: "assets/5-white.svg", 
-            subtitle: "移動が多く <br> 暑さ対策が難しい", 
-            title: "メンテナンス作業"
-          }
-        -
-          const c6 = {
-            solutionsImg: "assets/photo-6.png", 
-            solutionsIcon: "assets/6.svg", 
-            solutionsWhiteIcon: "assets/6-white.svg", 
-            subtitle: "運転者の <br> 暑さ対策が難しい", 
-            title: "フォークリフト作業"
-          }
-        -
-          const c7 = {
-            solutionsImg: "assets/photo-7.png", 
-            solutionsIcon: "assets/7.svg", 
-            solutionsWhiteIcon: "assets/7-white.svg", 
-            subtitle: "とにかく安価に <br> おさえたい", 
-            title: "低価格モデル"
-          }
-        -
-          const c8 = {
-            solutionsImg: "assets/photo-8.png", 
-            solutionsIcon: "assets/8.svg", 
-            solutionsWhiteIcon: "assets/8-white.svg", 
-            subtitle: "たくさんの作業者を <br> 冷やしたい", 
-            title: "多人数使用モデル"
-          }
-        +solutions(c1)
-        +solutions(c2)
-        +solutions(c3)
-        +solutions(c4)
-        +solutions(c5)
-        +solutions(c6)
-        +solutions(c7)
-        +solutions(c8)
+        +solutions("assets/photo-1.png", "assets/1.svg", "assets/1-white.svg", "熱源があり <br> 輻射熱の影響を受ける", "鉄鋼工場")
+        +solutions("assets/photo-2.png", "assets/2.svg", "assets/2-white.svg", "衛生服とマスクが必須で <br> 蒸し暑い", "食品工場")
+        +solutions("assets/photo-3.png", "assets/3.svg", "assets/3-white.svg", "大量の粉塵・ <br> ヒュームが発生する", "溶接作業")
+        +solutions("assets/photo-4.png", "assets/4.svg", "assets/4-white.svg", "防爆エリアかつ風の <br> 対策ができない", "塗装ブース")
+        +solutions("assets/photo-5.png", "assets/5.svg", "assets/5-white.svg", "移動が多く <br> 暑さ対策が難しい", "メンテナンス作業")
+        +solutions("assets/photo-6.png", "assets/6.svg", "assets/6-white.svg", "運転者の <br> 暑さ対策が難しい", "フォークリフト作業")
+        +solutions("assets/photo-7.png", "assets/7.svg", "assets/7-white.svg", "とにかく安価に <br> おさえたい", "低価格モデル")
+        +solutions("assets/photo-8.png", "assets/8.svg", "assets/8-white.svg", "たくさんの作業者を <br> 冷やしたい", "多人数使用モデル")
+
 block script
   script(src="js/top/index.ts")
