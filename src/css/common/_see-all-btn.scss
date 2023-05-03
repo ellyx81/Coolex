@@ -1,0 +1,33 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'settings/color' as color;
+
+.see-all-btn {
+  @include mixin.center;
+  color: color.$primary;
+  background-color: color.$white;
+  border: solid 1px color.$primary;
+  border-radius: 20px;
+  margin: 24px auto 20px auto;
+  padding: 4px 22px;
+  float: right;
+  transition: transform 0.3s ease;
+
+  & * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: function.getem(16, 28);
+  }
+
+  &__icon {
+    margin-right: 8px;
+    height: 12px;
+  }
+}

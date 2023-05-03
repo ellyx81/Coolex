@@ -1,0 +1,28 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'settings/color' as color;
+@use 'settings/font-weight' as font-weight;
+
+.title {
+  @include mixin.center;
+  width: 100%;
+  padding: 60px 0 40px 0;
+
+  &__text {
+    font-weight: font-weight.$bold;
+    font-size: 28px;
+    line-height: function.getem(28, 40);
+    color: color.$primary;
+    margin: 0 20px
+  }
+
+  &__decoration {
+    height: 28px;
+    width: calc(28*2) + px;
+    background: linear-gradient(to right, color.$primary 50%, color.$secondary 50%);
+  
+    &--right {
+      background: linear-gradient(to right, color.$secondary 50%, color.$primary 50%);
+    }
+  }
+}
