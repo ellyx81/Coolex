@@ -33,5 +33,5 @@ mixin information(date, category, content, modifier="")
   .information__details
     .information__lead
       span.information__date= date
-      span.information__category(class="information__category--" + modifier)= category
-    span.information__content!= content
+      a(href="#").information__category(class= modifier)= category
+    a(href="#").information__content!= content

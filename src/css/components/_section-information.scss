@@ -3,17 +3,14 @@
 @use 'settings/color' as color;
 
 .information {
-
   background-color: color.$very-light-blue;
 
-  &,
-  &__container,
-  &__date,
   &__category,
-  &__details,
-  &__lead,
   &__content {
-    justify-content: flex-start;
+    cursor: pointer;
+  }
+
+  &__container * {
     width: 100%;
   }
 }
@@ -34,6 +31,11 @@
 .information__lead {
   @include mixin.center;
   max-width: 210px;
+}
+
+.information__content {
+  font-size: 18px;
+  line-height: function.getem(18, 26);
 }
 
 .information__category {
