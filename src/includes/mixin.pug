@@ -24,6 +24,14 @@ mixin case-study(image, title, subtitle, bottomSubtitle)
         span.case-studies__subtitle!= bottomSubtitle
 
 mixin see-all-btn(text) 
-  a(href="#").see-all-btn
-    img(src="assets/arrow-right-blue-01.svg", alt="").see-all-btn__icon
-    .see-all-btn__text= text
+  .btn-area
+    a(href="#").see-all-btn
+      img(src="assets/arrow-right-blue-01.svg", alt="").see-all-btn__icon
+      .see-all-btn__text= text
+
+mixin information(date, category, content, modifier="")
+  .information__details
+    .information__lead
+      span.information__date= date
+      span.information__category(class="information__category--" + modifier)= category
+    span.information__content!= content

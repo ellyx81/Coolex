@@ -2,15 +2,19 @@
 @use 'tools/function' as function;
 @use 'settings/color' as color;
 
+.btn-area {
+  @include mixin.center;
+  width: 100%;
+}
+
 .see-all-btn {
   @include mixin.center;
   color: color.$primary;
   background-color: color.$white;
   border: solid 1px color.$primary;
   border-radius: 20px;
-  margin: 24px auto 20px auto;
+  margin: 24px 0 20px auto;
   padding: 4px 22px;
-  float: right;
   transition: transform 0.3s ease;
 
   & * {

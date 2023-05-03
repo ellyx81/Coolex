@@ -1,0 +1,49 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'settings/color' as color;
+
+.information {
+
+  background-color: color.$very-light-blue;
+
+  &,
+  &__container,
+  &__date,
+  &__category,
+  &__details,
+  &__lead,
+  &__content {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+.information__details {
+  @include mixin.center;
+  padding: 14px 0;
+  font-size: 16px;
+  line-height: function.getem(16, 28);
+  border-top: 1px solid rgba(color.$black, .5);
+  align-items: flex-start;
+
+  &:last-child {
+    border-bottom: 1px solid rgba(color.$black, .5);
+  }
+}
+
+.information__lead {
+  @include mixin.center;
+  max-width: 210px;
+}
+
+.information__category {
+  color: color.$secondary;
+
+  &--green {
+    color: color.$green;
+  }
+
+  &--orange {
+    color: color.$orange;
+  }
+}
