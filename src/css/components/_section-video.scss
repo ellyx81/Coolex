@@ -1,0 +1,22 @@
+@use 'tools/mixin' as mixin;
+
+.video__container {
+  border: 1px solid red;
+  @include mixin.center;
+  height: 275px;
+  gap: 25px;
+}
+
+.video__item {
+  flex: 30%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid green;
+}
+
+.video__thumbnail-image {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 8px;
+}
