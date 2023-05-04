@@ -33,7 +33,7 @@ mixin information(date, category, content, modifier="")
   .information__details
     .information__lead
       span.information__date= date
-      a(href="#").information__category(class= modifier)= category
+      a(href="#" class= modifier).information__category= category
     a(href="#").information__content!= content
 
 mixin video(thumbnail, heading, subheading)

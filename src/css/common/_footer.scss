@@ -1,0 +1,45 @@
+@use 'tools/mixin';
+@use 'settings/font-family' as font-family;
+@use 'settings/font-weight' as font-weight;
+@use 'settings/color' as color;
+
+.footer {
+  background-color: color.$very-light-gray;
+  height: 578px;
+  width: 100%;
+  border: 1px solid red;
+  margin-top: 150px;
+  //position: absolute;
+  //bottom: 0;
+}
+
+.center-margin {
+  width: 65%;
+  margin: auto;
+  //border: 1px solid green;
+  @include mixin.center;
+  flex-direction: column;
+}
+
+.footer__plan {
+  margin-top: -50px;
+  width: 100%;
+  //border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__plan-card {
+  flex: 30%;
+  max-width: 310px;
+ // border: 1px solid blue;
+  height: 254px;
+  background-image: linear-gradient(color.$gray, color.$dark-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.footer__plan-card--blue {
+  background-image: linear-gradient(color.$secondary, color.$primary);
+}
