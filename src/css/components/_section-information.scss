@@ -31,15 +31,18 @@
 .information__lead {
   @include mixin.center;
   max-width: 210px;
+  align-items: flex-start;
 }
 
 .information__content {
   font-size: 18px;
   line-height: function.getem(18, 26);
+  cursor: pointer;
 }
 
 .information__category {
   color: color.$secondary;
+  cursor: pointer;
 
   &--green {
     color: color.$green;

@@ -1,5 +1,6 @@
 @use 'tools/mixin' as mixin;
 @use 'tools/function' as function;
+@use 'settings/color' as color;
 @use 'settings/font-weight' as  font-weight;
 
 .video__container {
@@ -21,23 +22,25 @@
   @include mixin.center;
   position: relative;
   height: 184px;
+  border-radius: 5px;
   overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    box-shadow: rgba(color.$black, 0.2) 0 10px 15px;
+    transform: translate(0,-5px);
+  }
 }
 
 .video__thumbnail-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .video__icon {
   position: absolute;
   width: 78px;
-
-  &:hover {
-    opacity: .5;
-  }
 }
 
 .video__text-container {
