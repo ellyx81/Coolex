@@ -1,7 +1,8 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'settings/font-weight' as  font-weight;
 
 .video__container {
-  border: 1px solid red;
   @include mixin.center;
   height: 275px;
   gap: 25px;
@@ -10,13 +11,47 @@
 .video__item {
   flex: 30%;
   width: 100%;
-  height: 100%;
-  border: 1px solid green;
+  
+  & * {
+    cursor: pointer;
+  }
+}
+
+.video__thumbnail-container {
+  @include mixin.center;
+  position: relative;
+  height: 184px;
+  overflow: hidden;
 }
 
 .video__thumbnail-image {
   width: 100%;
-  height: 185px;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.video__icon {
+  position: absolute;
+  width: 78px;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.video__text-container {
+  margin-top: 13px;
+}
+
+.video__heading {
+  font-size: 18px;
+  font-weight: font-weight.$bold;
+  line-height: function.getem(18, 24);
+}
+
+.video__subheading {
+  font-size: 16px;
+  font-weight: font-weight.$regular;
+  line-height: function.getem(16, 24);
 }

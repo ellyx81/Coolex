@@ -48,29 +48,10 @@ block content
       .center-area 
         +title("ムービーギャラリー")
         .video__container
-          .video__item
-            .video__thumbnail-container
-              img(src="assets/thumbnail1.png", alt="").video__thumbnail-image
-              img(src="", alt="").video__icon
-            .video__text-container
-              h2.video__heading
-              h2.video__subheading 
-
-          .video__item
-            .video__thumbnail-container
-              img(src="assets/thumbnail2.png", alt="").video__thumbnail-image
-              img(src="", alt="").video__icon
-            .video__text-container
-              h2.video__heading
-              h2.video__subheading 
-
-          .video__item
-            .video__thumbnail-container
-              img(src="assets/thumbnail3.png", alt="").video__thumbnail-image
-              img(src="", alt="").video__icon
-            .video__text-container
-              h2.video__heading
-              h2.video__subheading 
+          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
+          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
+          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
+        +see-all-btn("ムービー一覧")
               
         
 block script
