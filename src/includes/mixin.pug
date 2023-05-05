@@ -44,3 +44,17 @@ mixin video(thumbnail, heading, subheading)
     .video__text-container
       h2.video__heading= heading
       h3.video__subheading= subheading
+
+mixin plan-card(icon, heading, subheading, modifier="")
+  .footer__plan-card(class= modifier)
+      img(src= icon, alt="").footer__plan-icon
+      h2.footer__plan-heading= heading
+      h3.footer__plan-subheading!= subheading
+
+mixin sitemap-section(modifier, title, ...items)
+  .footer__sitemap-section 
+    h2.footer__sitemap-title= title
+    ul.footer__sitemap-list(class= modifier)
+      each item in items 
+        li
+          a(href="#").footer__sitemap-item= item
