@@ -1,0 +1,21 @@
+@use 'tools/mixin' as mixin;
+@use 'settings/color' as color;
+
+.footer__back-to-top {
+  @include mixin.center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: color.$primary;
+
+  &-icon {
+    width: 30px;
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+}

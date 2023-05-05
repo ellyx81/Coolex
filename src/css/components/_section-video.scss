@@ -5,7 +5,6 @@
 
 .video__container {
   @include mixin.center;
-  height: 275px;
   gap: 25px;
 }
 
