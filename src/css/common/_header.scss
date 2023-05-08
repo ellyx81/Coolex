@@ -1,6 +1,8 @@
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
 @use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
+@use 'tools/function' as function;
 
 .header {
   background-image: linear-gradient(color.$dark-gray, color.$black, color.$dark-blue);
@@ -8,7 +10,6 @@
   width: 100%;
   position: fixed;
   display: flex;
-  font-size: 18px;
   z-index: 2;
 }
 
@@ -28,20 +29,60 @@
   align-items: flex-start;
   flex: 45%;
   padding-left: 20px;
-  color: color.$white;
+  font-size: 18px;
   font-weight: font-weight.$regular;
+  color: color.$white;
+  border: 1px solid yellow;
 }
 
 //menu item
 .header__menu {
   position: relative;
   display: inline-block;
+  border: 1px solid red;
+
+  transform: translate(0, 0);
 
   &-item {
     cursor: pointer;
     height: 60px;
     @include mixin.center;
-    padding: 0 30px 0px 10px;
+    padding: 0 30px 0 10px;
+  }
+}
+
+.header__nav-toggle {
+  $offset: 60px * 0.5;
+
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  margin: 20px;
+  
+  &:hover {
+    cursor: pointer;
+  }
+    
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: #{$offset - 6px / 2};
+    left: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 6px;
+    background: color.$secondary;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  
+  &:before {
+    box-shadow: 0 #{$offset / 1.5} 0 0 color.$secondary;
+  }
+  
+  &:after {
+    box-shadow: 0 #{-$offset / 1.5} 0 0 color.$secondary;
   }
 }
 
@@ -88,6 +129,10 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 
+  &:hover {
+    transform: scale(.9);
+  }
+
   &__heading {
     font-size: 20px;
     margin-top: 5px;
@@ -97,6 +142,7 @@
     line-height: 1;
     cursor: pointer;
   }
+
   &__subheading-container {
     @include mixin.center;
     cursor: pointer;
@@ -105,13 +151,138 @@
     font-size: 19px;
     cursor: pointer;
   }
+
   &__subheading--small {
     font-size: 16px;
   }
 }
 
-//change style of button when hovered
-.btn:hover {
-  transform: scale(.9);
+//media query
+@media screen and (max-width: 1440px) {
+  .header__nav {
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  
+  .header__menu-item {
+    padding: 0 20px 0 5px;
+  }
+
+  .btn {
+    width: 180px;
+
+    &__heading {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__subheading {
+      font-size: 16px;
+    }
+
+    &__subheading--small {
+      font-size: 14px;
+    }
+  }
+}
+
+@include media-query.mx1200 {
+  .header {
+    height: 50px;
+
+    img {
+      height: 50px;
+    }
+
+    &__logo {
+      margin: 0 10px;
+    }
+
+    &__nav {
+      font-size: 12px;
+      padding-left: 0;
+    }
+  }
+
+  .header__menu-item {
+    height: 50px;
+    padding: 0 22px 0 3px;
+  }
+
+  .header__dropdown {
+    font-size: 12px;
+    min-width: 90px;
+  }
+
+  .btn {
+    width: 140px;
+    height: 70px;
+
+    &__heading {
+      font-size: 16px;
+    }
+
+    &__subheading {
+      font-size: 12px;
+
+      &--small {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@include media-query.sp {
+  .header,
+  .header__logo img {
+    height: 100px;
+  }
+
+  .header__nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    color: color.$primary;
+    font-size: 36px;
+    line-height: function.getem(36, 28);
+    background-color: color.$white;
+    width: 600px;
+    padding-top: 20px;
+
+    &.is-active {
+      &-toggle {
+        &:before, &:after {
+          box-shadow: none;
+        }
+        
+        &:before {
+          transform: rotate(-45deg);
+        }
+        
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .header__menu-item {
+      transform: translate(0, 0);
+    }
+  }
+
+  .header__nav-toggle {
+    display: block;
+  }
+
+  .header__menu-item {
+    padding: 40px;
+    transition: transform .3s ease;
+    transform: translate(calc(-100% - 50px), 0);
+  }
+
+  .btn {
+    display: none;
+  }
 }
 

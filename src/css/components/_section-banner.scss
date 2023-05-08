@@ -1,4 +1,5 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
 @use 'tools/function' as function;
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
@@ -6,6 +7,14 @@
 .section {
   position: relative;
   top: 60px;
+
+  @include media-query.mx1200 {
+    top: 50px;
+  }
+
+  @include media-query.sp {
+    top: 100px;
+  }
 }
 
 .banner {
