@@ -2,30 +2,61 @@ block contents
   header.header
     a.header__logo(href="#")
       img(src='assets/logo.png' alt="")
-    nav.header__nav
-      .header__menu
-        a(href="#").header__menu-item トップ
-      .header__menu 
-        p.header__menu-item COOLEXとは
-        .header__dropdown
-          a(href="#").header__dropdown-item コンセプト
-          a(href="#").header__dropdown-item 冷却機能
-      .header__menu 
-        a(href="#").header__menu-item 製品一覧
-      .header__menu
-        a(href="#").header__menu-item 用途一覧
-      .header__menu 
-        a(href="#").header__menu-item 導入事例
-      .header__menu
-        a(href="#").header__menu-item お問い合わせ
-    .header__btn-container
-      a(href="#").btn 
-        p.btn__heading 1day
-        .btn__subheading-container
-          span.btn__subheading 日帰り体験デモ
-          span.btn__subheading.btn__subheading--small （無料）
-      a(href="#").btn 
-        p.btn__heading 1week
-        .btn__subheading-container
-          span.btn__subheading.btn__subheading 有料トライアル
-    .header__nav-toggle.js-toggle
+    .header__items.js-header
+    
+      nav.header__nav.js-nav
+
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link トップ
+            
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            p.header__nav-link COOLEXとは
+            
+          .header__dropdown.js-dropdown
+            .header__sub-menu.js-submenu
+              img(src="assets/arrow-right-blue-01.svg", alt="").header__dropdown-icon
+              a(href="#").header__dropdown-item コンセプト
+            .header__sub-menu.js-submenu
+              img(src="assets/arrow-right-blue-01.svg", alt="").header__dropdown-icon
+              a(href="#").header__dropdown-item 冷却機能
+
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link 製品一覧
+
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link 用途一覧
+            
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link 導入事例
+
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link お問い合わせ
+
+        .header__nav-item.js-nav-item
+          .header__main-menu.js-main-menu
+            img(src="assets/arrow-right-blue-01.svg", alt="").header__nav-item-icon
+            a(href="#").header__nav-link 会社情報
+            
+      .header__nav-toggle.js-toggler
+      .header__btn-container
+        a(href="#").btn 
+          p.btn__heading 1day
+          .btn__subheading-container
+            span.btn__subheading 日帰り体験デモ
+            span.btn__subheading.btn__subheading--small （無料）
+        a(href="#").btn 
+          p.btn__heading 1week
+          .btn__subheading-container
+            span.btn__subheading.btn__subheading 有料トライアル
