@@ -13,6 +13,10 @@
   position: fixed;
   display: flex;
   z-index: 3;
+  
+  @media screen and (max-width: 1200px) {
+    height: size.$header-mx1200;
+  }
 
   @include media-query.sp {
     height: size.$header-sp;    
@@ -25,7 +29,6 @@
       .header__items {
         transform: translate(0, 0);
         height: 100vh;
-        border: 1px solid red;
         background-color: color.$white;
       }
       
@@ -53,9 +56,17 @@
     height: size.$header-desktop;;
     cursor: pointer;
 
+    @media screen and (max-width: 1200px) {
+      height: size.$header-mx1200;
+    }
+
     @include media-query.sp {
       height: size.$header-sp;
     }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    margin: 0 10px;
   }
 }
 
@@ -68,6 +79,16 @@
   font-weight: font-weight.$regular;
   color: color.$white;
   position: relative;
+
+  @media screen and (max-width: 1440px){
+    font-size: 15px;
+    padding-left: 5px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    font-size: 12px;
+    padding-left: 0;
+  }
 
   @include media-query.sp {
     flex-direction: column;
@@ -193,6 +214,10 @@
   position: relative;
   cursor: pointer;
 
+  @media screen and (max-width: 1440px) {
+    margin: 0 20px 0 5px;
+  }
+
   @include media-query.sp {
     display: flex;
     justify-content: flex-start;
@@ -217,6 +242,15 @@
     }
   }
 
+  @media screen and (max-width: 1440px) {
+    width: 110px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    top: size.$header-mx1200;
+    width: 80px;
+  }
+
   @include media-query.sp {
     display: none;
     position: relative;
@@ -226,6 +260,7 @@
     padding-bottom: 20px;
 
     .header__dropdown-item {
+      font-size: 36px;
       background-image: none;
       width: auto;
     }
@@ -283,6 +318,40 @@
     font-size: 16px;
   }
 
+  @media screen and (max-width: 1440px) {
+    width: 180px;
+
+    &__heading {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    &__subheading {
+      font-size: 16px;
+    }
+
+    &__subheading--small {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 140px;
+    height: 70px;
+
+    &__heading {
+      font-size: 16px;
+    }
+
+    &__subheading {
+      font-size: 12px;
+
+      &--small {
+        font-size: 10px;
+      }
+    }
+  }
+  
   @include media-query.sp {
     width: 254px;
     height: 170px;
