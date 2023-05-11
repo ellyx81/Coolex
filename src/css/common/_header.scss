@@ -23,13 +23,13 @@
     
     //active side navigation
     &.is-active {
-
       box-shadow: 0 0 0 10000px rgba(0,0,0,.50);
 
       .header__items {
         transform: translate(0, 0);
-        height: 100vh;
+        //height: 100vh;
         background-color: color.$white;
+       // overflow: auto;
       }
       
       .header__nav-toggle {
@@ -98,7 +98,6 @@
     bottom: 0;
     width: 600px;
     padding-left: 0;
-    padding-top: 10px;
     transition: transform .3s ease;
     transform: translate(100%, 0);
   }
@@ -170,7 +169,7 @@
   justify-content:flex-start;
 
    @include media-query.sp {
-    padding: 40px 30px;
+    padding: 40px;
     height: auto;
   }
 }
