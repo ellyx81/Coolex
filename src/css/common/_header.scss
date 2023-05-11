@@ -58,8 +58,9 @@
   }
 }
 
-//navigation area
+//menu items and button container
 .header__items {
+  width: 100%;
   display: flex;
   padding-left: 20px;
   font-size: 18px;
@@ -80,13 +81,14 @@
   }
 }
 
-//menu item
+//navigation
 .header__nav {
   display: flex;
+  flex: 70%;
   
   @include media-query.sp {
-    
     flex-direction: column; 
+    flex: 0;
     color: color.$primary;
     font-size: 36px;
     line-height: function.getem(36, 28);
@@ -116,7 +118,6 @@
       display: none;
     }
   }
-
 }
 
 .header__main-menu {
@@ -190,7 +191,7 @@
   }
 }
 
-//dropdown
+// dropdown item/submenu
 .header__dropdown {
   display: none;
   position: absolute;
@@ -225,14 +226,10 @@
 //button
 .header__btn-container {
   display: flex;
-  //position: absolute;
-  right: 0;
   justify-content: space-evenly;
 
   @include media-query.sp {
     background-color: color.$white;
-    //position: relative;
-    //bottom: 0;
     justify-content: center;
     padding: 50px 0 100px 0;
   }
@@ -249,30 +246,6 @@
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
-
-  @include media-query.sp {
-    width: 254px;
-    height: 170px;
-    display: flex;
-
-    .btn__heading {
-      font-size: 40px;
-    }
-
-    .btn__subheading-container {
-      @include mixin.center;
-      flex-direction: column;
-      height: 50%;
-    }
-
-    .btn__subheading {
-      font-size: 30px;
-
-      &--small {
-        font-size: 24px;
-      }
-    }
-  }
 
   &:hover {
     transform: scale(.9);
@@ -299,6 +272,30 @@
 
   &__subheading--small {
     font-size: 16px;
+  }
+
+  @include media-query.sp {
+    width: 254px;
+    height: 170px;
+    display: flex;
+
+    .btn__heading {
+      font-size: 40px;
+    }
+
+    .btn__subheading-container {
+      @include mixin.center;
+      flex-direction: column;
+      height: 50%;
+    }
+
+    .btn__subheading {
+      font-size: 30px;
+
+      &--small {
+        font-size: 24px;
+      }
+    }
   }
 }
 

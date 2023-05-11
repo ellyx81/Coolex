@@ -1,6 +1,7 @@
 const toggler = () => {
   const header = document.querySelector(".js-header") as HTMLElement;
-  
+  const main = document.querySelector('.section') as HTMLElement;
+
   if (header) {
     const toggle = header.querySelector(".js-toggler");
     console.log(toggle); // Check if the toggle button is being selected properly
@@ -15,6 +16,7 @@ const toggler = () => {
         } else {
           header.classList.add("is-active");
           console.log("active"); //test
+          main.style.overflowY = 'hidden';
         }
       });
       
