@@ -1,5 +1,6 @@
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
+@use 'settings/size' as size;
 @use 'tools/mixin' as mixin;
 @use 'tools/media-queries' as media-query;
 @use 'tools/function' as function;
@@ -7,14 +8,14 @@
 //header bar
 .header {
   background-image: linear-gradient(color.$dark-gray, color.$black, color.$dark-blue);
-  height: 60px;
+  height: size.$header-desktop;
   width: 100%;
   position: fixed;
   display: flex;
   z-index: 3;
 
   @include media-query.sp {
-    height: 100px;    
+    height: size.$header-sp;    
     
     //active side navigation
     &.is-active {
@@ -49,11 +50,11 @@
   margin: 0 25px;
 
   img {
-    height: 60px;
+    height: size.$header-desktop;;
     cursor: pointer;
 
     @include media-query.sp {
-      height: 100px;
+      height: size.$header-sp;
     }
   }
 }
@@ -71,11 +72,12 @@
   @include media-query.sp {
     flex-direction: column;
     position: absolute;
-    top: 100px;
+    top: size.$header-sp;
     right: 0;
     bottom: 0;
     width: 600px;
     padding-left: 0;
+    padding-top: 10px;
     transition: transform .3s ease;
     transform: translate(100%, 0);
   }
@@ -122,15 +124,20 @@
 
 .header__main-menu {
   @include media-query.sp {
+    
     //main menu item active state
     &.is-active {
+      background-color: color.$very-light-gray;
+      
+
       .header__nav-item-icon {
-          transform: rotate(90deg);    
+        transform: rotate(90deg);    
       }
 
       & + .header__dropdown {
         display: flex;
         flex-direction: column;
+        background-color: color.$very-light-gray;
       }
     }
   }
@@ -142,17 +149,19 @@
   justify-content:flex-start;
 
    @include media-query.sp {
-    padding: 40px;
+    padding: 40px 30px;
     height: auto;
   }
 }
 
 .header__sub-menu {
   @include media-query.sp {
-    padding: 20px 40px;
+    padding: 15px 80px;
+    height: 100%;
 
     &.is-active {
       //sub menu item active state
+      
       .header__dropdown-icon {
           transform: rotate(90deg);    
       }
@@ -161,7 +170,6 @@
         display: flex;
         flex-direction: column;
       }
-
     }
   }
 }
@@ -195,7 +203,7 @@
 .header__dropdown {
   display: none;
   position: absolute;
-  top: 60px;
+  top: size.$header-desktop;
 
   &-item {
     width: 145px;
@@ -214,11 +222,12 @@
     position: relative;
     top: 0;
     width: 100%;
-    padding-left: 50px;
+    margin-top: -15px;
+    padding-bottom: 20px;
 
     .header__dropdown-item {
-      width: auto;
       background-image: none;
+      width: auto;
     }
   }
 }
@@ -301,19 +310,17 @@
 
 //toggler
 .header__nav-toggle {
-  $offset: 60px * 0.5;
   display: none;
   position: absolute;
   right: 0;
-  width: 60px;
-  height: 60px;
+  width: size.$toggler;
+  height: size.$toggler;
   margin: 20px;
-//  margin-top: -80px;
     
   &:before, &:after {
     content: "";
     position: absolute;
-    top: #{$offset - 6px / 2};
+    top: calc(size.$toggler-offset - 6px / 2);
     transform: translate(0, 0);
     width: 100%;
     height: 6px;
@@ -322,11 +329,11 @@
   }
   
   &:before {
-    box-shadow: 0 #{$offset / 1.5} 0 0 color.$secondary;
+    box-shadow: 0 calc(size.$toggler-offset / 1.5) 0 0 color.$secondary;
   }
   
   &:after {
-    box-shadow: 0 #{-$offset / 1.5} 0 0 color.$secondary;
+    box-shadow: 0 calc(size.$toggler-offset / -1.5) 0 0 color.$secondary;
   }
 
   @include media-query.sp {
