@@ -1,24 +1,25 @@
 const toggler = () => {
-  const nav = document.querySelector(".js-header");
-  console.log(nav); // Check if the nav is being selected properly
-
-  if (nav) {
-    const toggle = nav.querySelector(".js-toggler");
+  const header = document.querySelector(".js-header") as HTMLElement;
+  
+  if (header) {
+    const toggle = header.querySelector(".js-toggler");
     console.log(toggle); // Check if the toggle button is being selected properly
 
     if (toggle) {
       toggle.addEventListener("click", () => {
         console.log("Toggle button clicked"); // Check if the click event listener is being added
-        if (nav.classList.contains("is-active")) {
-          nav.classList.remove("is-active");
-          console.log("active");
+        
+        if (header.classList.contains("is-active")) {
+          header.classList.remove("is-active");
+          console.log("not active"); //test
         } else {
-          nav.classList.add("is-active");
+          header.classList.add("is-active");
+          console.log("active"); //test
         }
       });
       
-      nav.addEventListener("mouseleave", () => {
-        nav.classList.remove("is-active");
+      header.addEventListener("mouseleave", () => {
+        header.classList.remove("is-active");
       });
     }
   }

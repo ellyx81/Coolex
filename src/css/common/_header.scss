@@ -14,7 +14,34 @@
   z-index: 3;
 
   @include media-query.sp {
-    height: 100px;
+    height: 100px;    
+    
+    //active side navigation
+    &.is-active {
+
+      box-shadow: 0 0 0 10000px rgba(0,0,0,.50);
+
+      .header__items {
+        transform: translate(0, 0);
+        height: 100vh;
+        border: 1px solid red;
+        background-color: color.$white;
+      }
+      
+      .header__nav-toggle {
+        &:before, &:after {
+          box-shadow: none;
+        }
+        
+        &:before {
+          transform: rotate(-45deg);
+        }
+        
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
   }
 }
 
@@ -34,7 +61,6 @@
 //navigation area
 .header__items {
   display: flex;
-  flex: auto;
   padding-left: 20px;
   font-size: 18px;
   font-weight: font-weight.$regular;
@@ -49,33 +75,8 @@
     bottom: 0;
     width: 600px;
     padding-left: 0;
-    
-    //active side navigation
-    &.is-active {
-      
-      .header__nav-toggle {
-        &:before, &:after {
-          box-shadow: none;
-        }
-        
-        &:before {
-          transform: rotate(-45deg);
-        }
-        
-        &:after {
-          transform: rotate(45deg);
-        }
-      }
-
-      .header__nav,
-      .header__btn-container {
-        transform: translate(0, 0);
-      }
-
-      .header__nav {
-        box-shadow:0 0 0 10000px rgba(0,0,0,.50);
-      }
-    }
+    transition: transform .3s ease;
+    transform: translate(100%, 0);
   }
 }
 
@@ -84,13 +85,12 @@
   display: flex;
   
   @include media-query.sp {
+    
     flex-direction: column; 
     color: color.$primary;
     font-size: 36px;
     line-height: function.getem(36, 28);
     background-color: color.$white;
-    transition: transform .3s ease;
-    transform: translate(100%, 0);
   }
 }
 
@@ -152,7 +152,7 @@
 
     &.is-active {
       //sub menu item active state
-      .header__nav-item-icon {
+      .header__dropdown-icon {
           transform: rotate(90deg);    
       }
 
@@ -225,16 +225,14 @@
 //button
 .header__btn-container {
   display: flex;
-  position: absolute;
+  //position: absolute;
   right: 0;
   justify-content: space-evenly;
 
   @include media-query.sp {
     background-color: color.$white;
-    transition: transform .3s ease;
-    transform: translate(100%, 0);
-    position: relative;
-    bottom: 0;
+    //position: relative;
+    //bottom: 0;
     justify-content: center;
     padding: 50px 0 100px 0;
   }
@@ -313,7 +311,7 @@
   width: 60px;
   height: 60px;
   margin: 20px;
-  margin-top: -80px;
+//  margin-top: -80px;
     
   &:before, &:after {
     content: "";
