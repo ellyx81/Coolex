@@ -4,19 +4,6 @@
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
 
-.section {
-  position: relative;
-  top: 60px;
-
-  @include media-query.mx1200 {
-    top: 50px;
-  }
-
-  @include media-query.sp {
-    top: 100px;
-  }
-}
-
 .banner {
   @include mixin.center;
   flex-direction: column;
@@ -29,6 +16,13 @@
 
 .banner__image {
   width: 100%;
+
+  @include media-query.sp {
+    top: 100px;
+    height: 100%;
+    object-fit: cover;
+    content: url("../assets/sp-banner.png");
+  }
 }
 
 //slider buttons
