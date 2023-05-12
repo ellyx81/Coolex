@@ -27,7 +27,7 @@
 
       .header__items {
         transform: translate(0, 0);
-        //height: 100vh;
+        height: 100vh;
         background-color: color.$white;
        // overflow: auto;
       }
@@ -149,7 +149,6 @@
     &.is-active {
       background-color: color.$very-light-gray;
       
-
       .header__nav-item-icon {
         transform: rotate(90deg);    
       }
@@ -168,7 +167,7 @@
   @include mixin.center;
   justify-content:flex-start;
 
-   @include media-query.sp {
+  @include media-query.sp {
     padding: 40px;
     height: auto;
   }
@@ -229,18 +228,6 @@
   position: absolute;
   top: size.$header-desktop;
 
-  &-item {
-    width: 145px;
-    background-image: linear-gradient(color.$dark-gray, color.$black);
-    padding: 8px 10px;
-    text-decoration: none;
-    display: block;
-
-    &:hover {
-      background-image: linear-gradient(color.$primary, color.$dark-blue);
-    }
-  }
-
   @media screen and (max-width: 1440px) {
     width: 110px;
   }
@@ -257,8 +244,24 @@
     width: 100%;
     margin-top: -15px;
     padding-bottom: 20px;
+  }
 
-    .header__dropdown-item {
+  &-item {
+    width: 145px;
+    background-image: linear-gradient(color.$dark-gray, color.$black);
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      background-image: linear-gradient(color.$primary, color.$dark-blue);
+
+      @include media-query.sp {
+        background-image: none;
+      }  
+    }
+
+    @include media-query.sp {    
       font-size: 36px;
       background-image: none;
       width: auto;
@@ -294,6 +297,21 @@
     transform: scale(.9);
   }
 
+  @media screen and (max-width: 1440px) {
+    width: 180px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 140px;
+    height: 70px;
+  }
+  
+  @include media-query.sp {
+    width: 254px;
+    height: 170px;
+    display: flex;
+  }
+
   &__heading {
     font-size: 20px;
     margin-top: 5px;
@@ -302,76 +320,62 @@
     font-weight: font-weight.$black;
     line-height: 1;
     cursor: pointer;
+
+    @media screen and (max-width: 1440px) { 
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 16px;
+    }
+
+    @include media-query.sp {
+      font-size: 40px;
+    }
   }
 
   &__subheading-container {
     @include mixin.center;
     cursor: pointer;
-  }
-  &__subheading {
-    font-size: 19px;
-    cursor: pointer;
-  }
 
-  &__subheading--small {
-    font-size: 16px;
-  }
-
-  @media screen and (max-width: 1440px) {
-    width: 180px;
-
-    &__heading {
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    &__subheading {
-      font-size: 16px;
-    }
-
-    &__subheading--small {
-      font-size: 14px;
-    }
-  }
-
-  @media screen and (max-width: 1200px) {
-    width: 140px;
-    height: 70px;
-
-    &__heading {
-      font-size: 16px;
-    }
-
-    &__subheading {
-      font-size: 12px;
-
-      &--small {
-        font-size: 10px;
-      }
-    }
-  }
-  
-  @include media-query.sp {
-    width: 254px;
-    height: 170px;
-    display: flex;
-
-    .btn__heading {
-      font-size: 40px;
-    }
-
-    .btn__subheading-container {
+    @include media-query.sp {
       @include mixin.center;
       flex-direction: column;
       height: 50%;
     }
+  }
 
-    .btn__subheading {
+  &__subheading {
+    font-size: 19px;
+    cursor: pointer;
+
+    @media screen and (max-width: 1440px) { 
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 12px;
+    }
+
+    @include media-query.sp {
       font-size: 30px;
+    }
+  }
 
-      &--small {
-        font-size: 24px;
-      }
+  &__subheading--small {
+    font-size: 16px;
+
+    @media screen and (max-width: 1440px) { 
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 10px;
+    }
+
+    @include media-query.sp {
+      font-size: 24px;
     }
   }
 }
