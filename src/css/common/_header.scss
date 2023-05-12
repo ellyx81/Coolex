@@ -27,8 +27,8 @@
 
       .header__items {
         transform: translate(0, 0);
-        height: 100vh;
         background-color: color.$white;
+        height: 100vh;
        // overflow: auto;
       }
       
@@ -100,6 +100,7 @@
     padding-left: 0;
     transition: transform .3s ease;
     transform: translate(100%, 0);
+    height: 100vh;
   }
 }
 
@@ -133,11 +134,17 @@
     }
   }
 
-  &:hover .header__dropdown { //hover selector is present on desktop view but shouldn't be in sp view
-    display: block;
-
+  &:hover {
     @include media-query.sp {
-      display: none;
+      background-color: color.$very-light-gray;
+    }
+
+    .header__dropdown { //hover selector is present on desktop view but shouldn't be in sp view
+      display: block;
+  
+      @include media-query.sp {
+        display: none;
+      }
     }
   }
 }
@@ -147,8 +154,6 @@
     
     //main menu item active state
     &.is-active {
-      background-color: color.$very-light-gray;
-      
       .header__nav-item-icon {
         transform: rotate(90deg);    
       }
@@ -156,7 +161,6 @@
       & + .header__dropdown {
         display: flex;
         flex-direction: column;
-        background-color: color.$very-light-gray;
       }
     }
   }
@@ -180,10 +184,6 @@
 
     &.is-active {
       //sub menu item active state
-      
-      .header__dropdown-icon {
-          transform: rotate(90deg);    
-      }
 
       & + .header__dropdown {
         display: flex;
