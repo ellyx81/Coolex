@@ -202,6 +202,7 @@
 
   @include media-query.sp {
     display: block;
+    height: 9px;
   }
 }
 
@@ -306,8 +307,8 @@
   }
   
   @include media-query.sp {
-    width: 127px;
-    height: 185px;
+    width: 127.5px;
+    height: 92.5px;
     display: flex;
   }
 
