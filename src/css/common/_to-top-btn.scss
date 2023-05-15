@@ -11,7 +11,7 @@
   width: 60px;
   height: 60px;
   background-color: color.$primary;
-  z-index: 3;
+  z-index: 2;
 
   @include media-query.sp {
     width: 50.5px;

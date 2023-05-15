@@ -283,7 +283,7 @@
   @include media-query.mx980 {
     background-color: color.$white;
     justify-content: center;
-    padding: 25px 0 50px 0;
+    padding: 18px 0 50px 0;
   }
 }
 
@@ -340,6 +340,8 @@
 
     @include media-query.mx980 {
       font-size: 20px;
+      font-weight: function.getem(20, 25);
+      margin: 0 0 2px 0;
     }
   }
 
