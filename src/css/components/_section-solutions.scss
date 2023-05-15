@@ -1,4 +1,6 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
+@use 'tools/function' as function;
 @use 'settings/color' as color;
 
 .solutions {
@@ -10,6 +12,10 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @include media-query.sp {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .solutions__tile {
@@ -19,6 +25,10 @@
   padding: 25px 0;
   transition: transform 0.3s ease;
   overflow: hidden;
+
+  @include media-query.sp { 
+    height: 140px;
+  }
 
   & * {
     cursor: pointer;
@@ -56,7 +66,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
 }
 
 .solutions__content {
@@ -64,11 +74,20 @@
   flex-direction: column;
   text-align: center;
   color: color.$primary;
+
+  @include media-query.sp {
+    margin-top: -5px;
+  }
 }
 
 .solutions__icon {
   height: 57px;
   margin-bottom: 10px;
+    
+  @include media-query.sp {
+    height: 34.5px;
+    margin-bottom: 7px;
+  }
 }
 
 .solutions__icon--white {
@@ -78,10 +97,21 @@
 
 .solutions__subtitle {
   font-size: 18px;
+
+  @include media-query.sp {
+    font-size: 14px;
+    line-height: function.getem(14, 17);
+  }
 }
 
 .solutions__title {
   font-size: 25px;
+
+  @include media-query.sp {
+    font-size: 18px;
+    line-height: function.getem(18, 25);
+    margin-top: 3px;
+  }
 }
 
 .solutions__right-arrow {

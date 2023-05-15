@@ -1,5 +1,6 @@
 @use 'tools/mixin' as mixin;
 @use 'tools/function' as function;
+@use 'tools/media-queries' as media-query;
 @use 'settings/color' as color;
 
 .information {
@@ -18,10 +19,14 @@
 .information__details {
   @include mixin.center;
   padding: 14px 0;
-  font-size: 16px;
-  line-height: function.getem(16, 28);
   border-top: 1px solid rgba(color.$black, .5);
   align-items: flex-start;
+
+  @include media-query.sp {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
 
   &:last-child {
     border-bottom: 1px solid rgba(color.$black, .5);
@@ -32,12 +37,25 @@
   @include mixin.center;
   max-width: 210px;
   align-items: flex-start;
+  font-size: 16px;
+  line-height: function.getem(16, 28);
+
+  @include media-query.sp {  
+    max-width: 190px;
+    font-size: 14px;
+    line-height: function.getem(14, 14);
+  }
 }
 
 .information__content {
   font-size: 18px;
   line-height: function.getem(18, 26);
   cursor: pointer;
+
+  @include media-query.sp {  
+    font-size: 14px;
+    line-height: function.getem(14, 19);
+  }
 }
 
 .information__category {

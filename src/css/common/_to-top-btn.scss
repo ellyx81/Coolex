@@ -1,4 +1,5 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
 @use 'settings/color' as color;
 
 .footer__back-to-top {
@@ -10,9 +11,19 @@
   width: 60px;
   height: 60px;
   background-color: color.$primary;
+  z-index: 3;
+
+  @include media-query.sp {
+    width: 50.5px;
+    height: 50.5px;
+  }
 
   &-icon {
     width: 30px;
+
+    @include media-query.sp {
+      width: 25px;
+    }
   }
 
   &:hover {

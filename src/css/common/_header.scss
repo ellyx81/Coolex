@@ -26,7 +26,7 @@
 
       .header__items {
         transform: translate(0, 0);
-       // overflow: auto;
+        overflow-y: auto;
       }
       
       .header__nav-toggle {
@@ -52,6 +52,10 @@
   
   @media screen and (max-width: 1200px) {
     margin: 0 10px;
+  }
+
+  @include media-query.sp {
+    margin: 0 4px;
   }
 
   img {
@@ -88,14 +92,14 @@
     padding-left: 0;
   }
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     flex-direction: column;
     position: absolute;
     top: size.$header-sp;
     right: 0;
     bottom: 0;
     width: 300px;
-    height: 500vh;
+    height: 100vh;
     padding-left: 0;
     transition: transform .3s ease;
     transform: translate(100%, 0);
@@ -108,40 +112,41 @@
   display: flex;
   flex: 70%;
   
-  @include media-query.sp {
+  @include media-query.mx980 {
     flex-direction: column; 
     flex: 0;
     color: color.$primary;
     font-size: 18px;
     line-height: function.getem(18, 14);
     background-color: color.$white;
+    margin-top: 10px;
   }
 }
 
 .header__nav-item {
   display: flex;
   
-  @include media-query.sp {
+  @include media-query.mx980 {
     flex-direction: column;
   }
   
   &:last-child { //the last navigation item is present in sp view but isn't present on desktop
     display: none;
 
-    @include media-query.sp {
+    @include media-query.mx980 {
       display: flex;
     }
   }
 
   &:hover {
-    @include media-query.sp {
+    @include media-query.mx980 {
       background-color: color.$very-light-gray;
     }
 
     .header__dropdown { //hover selector is present on desktop view but shouldn't be in sp view
       display: block;
   
-      @include media-query.sp {
+      @include media-query.mx980 {
         display: none;
       }
     }
@@ -149,7 +154,7 @@
 }
 
 .header__main-menu {
-  @include media-query.sp {
+  @include media-query.mx980 {
     
     //main menu item active state
     &.is-active {
@@ -170,15 +175,15 @@
   @include mixin.center;
   justify-content:flex-start;
 
-  @include media-query.sp {
-    padding: 20px;
+  @include media-query.mx980 {
+    padding: 10px;
     height: auto;
   }
 }
 
 .header__sub-menu {
-  @include media-query.sp {
-    padding: 7.5px 40px;
+  @include media-query.mx980 {
+    padding: 5px 35px;
     height: 100%;
 
     &.is-active {
@@ -195,14 +200,13 @@
 .header__nav-item-icon,
 .header__dropdown-icon {
   display: none;
-  width: 20px;
-  height: 18px;
-  margin: 8px;
+  width: 15px;
+  height: 9px;
+  margin: 8px 4px 8px 10px;
   transition: transform .3s;
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     display: block;
-    height: 9px;
   }
 }
 
@@ -216,7 +220,7 @@
     margin: 0 20px 0 5px;
   }
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     display: flex;
     justify-content: flex-start;
   }
@@ -237,13 +241,13 @@
     width: 80px;
   }
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     display: none;
     position: relative;
     top: 0;
     width: 100%;
-    margin-top: -15px;
-    padding-bottom: 20px;
+    margin-top: -8px;
+   // padding-bottom: 20px;
   }
 
   &-item {
@@ -256,15 +260,17 @@
     &:hover {
       background-image: linear-gradient(color.$primary, color.$dark-blue);
 
-      @include media-query.sp {
+      @include media-query.mx980 {
         background-image: none;
       }  
     }
 
-    @include media-query.sp {    
+    @include media-query.mx980 {    
       font-size: 18px;
       background-image: none;
       width: auto;
+      padding-left: 0;
+      margin-left: -2px;
     }
   }
 }
@@ -274,7 +280,7 @@
   display: flex;
   justify-content: space-evenly;
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     background-color: color.$white;
     justify-content: center;
     padding: 25px 0 50px 0;
@@ -293,10 +299,6 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 
-  &:hover {
-    transform: scale(.9);
-  }
-
   @media screen and (max-width: 1440px) {
     width: 180px;
   }
@@ -306,10 +308,16 @@
     height: 70px;
   }
   
-  @include media-query.sp {
-    width: 127.5px;
-    height: 92.5px;
+  @include media-query.mx980 {
+    width: 127px;
+    height: 85px;
     display: flex;
+    border-radius: 2.5px;
+    margin: 2.5px;
+  }
+
+  &:hover {
+    transform: scale(.9);
   }
 
   &__heading {
@@ -330,7 +338,7 @@
       font-size: 16px;
     }
 
-    @include media-query.sp {
+    @include media-query.mx980 {
       font-size: 20px;
     }
   }
@@ -339,7 +347,7 @@
     @include mixin.center;
     cursor: pointer;
 
-    @include media-query.sp {
+    @include media-query.mx980 {
       @include mixin.center;
       flex-direction: column;
       height: 50%;
@@ -358,7 +366,7 @@
       font-size: 12px;
     }
 
-    @include media-query.sp {
+    @include media-query.mx980 {
       font-size: 15px;
     }
   }
@@ -374,7 +382,7 @@
       font-size: 10px;
     }
 
-    @include media-query.sp {
+    @include media-query.mx980 {
       font-size: 12px;
     }
   }
@@ -387,13 +395,13 @@
   right: 0;
   width: size.$toggler;
   height: size.$toggler;
-  margin: 15px;
+  margin: 10px;
     
   &:before, 
   &:after {
     content: "";
     position: absolute;
-    top: calc(size.$toggler-offset - 6px / 2);
+    top: calc(size.$toggler-offset - 4px / 2);
     transform: translate(0, 0);
     width: 100%;
     height: calc(size.$toggler / 10);
@@ -402,14 +410,14 @@
   }
   
   &:before {
-    box-shadow: 0 calc(size.$toggler-offset / 1.5) 0 0 color.$secondary;
+    box-shadow: 0 calc(size.$toggler-offset / 1.4) 0 0 color.$secondary;
   }
   
   &:after {
-    box-shadow: 0 calc(size.$toggler-offset / -1.5) 0 0 color.$secondary;
+    box-shadow: 0 calc(size.$toggler-offset / -1.4) 0 0 color.$secondary;
   }
 
-  @include media-query.sp {
+  @include media-query.mx980 {
     display: block;
   }
 }

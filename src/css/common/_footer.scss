@@ -1,5 +1,6 @@
 @use 'tools/mixin' as mixin;
 @use 'tools/function' as function;
+@use 'tools/media-queries' as media-query;
 @use 'settings/font-family' as font-family;
 @use 'settings/font-weight' as font-weight;
 @use 'settings/color' as color;
@@ -9,12 +10,21 @@
   background-color: color.$very-light-gray;
   width: 100%;
   margin-top: 190px;
+
+  @include media-query.sp {
+    margin-top: 100px;
+  }
 }
 
 .footer__plan {
   @include mixin.center;
   gap: 25px;
   margin-top: -50px;
+
+  @include media-query.sp {
+    flex-direction: column;
+    gap: 10px;
+  }
   
   &-card {
     @include mixin.center;
@@ -24,8 +34,14 @@
     background: linear-gradient(color.$gray, color.$dark-gray);
     border-radius: 5px;
     overflow: hidden;
-    color: color.$white;
-    text-align: center;
+
+    @include media-query.sp {
+      height: auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+      padding: 16px 25px 22px 25px;
+    }
 
     &--blue {
       background-image: linear-gradient(color.$secondary, color.$primary);
@@ -33,7 +49,20 @@
   }
 
   &-icon {
-    width: 73px;
+    width: 69px;
+
+    @include media-query.sp {
+      width: 45px;
+    }
+  }
+
+  &-text {
+    color: color.$white;
+    text-align: center;
+
+    @include media-query.sp {
+      text-align: left;
+    }
   }
 
   &-heading {
@@ -41,12 +70,24 @@
     font-weight: font-weight.$regular;
     line-height: function.getem(26, 50);
     margin: 4px 0;
+
+    @include media-query.sp {
+      font-size: 21px;
+      line-height: function.getem(21, 25);
+    }
   }
 
   &-subheading {
     font-size: 16px;
     font-weight: font-weight.$regular;
     line-height: function.getem(16, 26);
+    padding: 0 35px;
+
+    @include media-query.sp {
+      font-size: 14px;
+      line-height: function.getem(14, 20);
+      padding: 0;
+    }
   }
 }
 
@@ -54,13 +95,59 @@
   margin-top: 30px;
   display: flex;
   align-items: flex-start;
-  
+  overflow: hidden;
+
+  @include media-query.sp {
+    flex-direction: column;
+    margin-top: 23px;
+  }
+
   &-section {
     border-left: 1px solid color.$text;
     padding: 5px 25px 5px 16px;
 
+    @include media-query.sp {
+      width: 100%;
+      padding: 7px 0 7px 0;
+      border-left: none;
+    }
+
+    &:first-of-type, //remove line on title for the first and last section
     &:last-child {
-      font-weight: font-weight.$bold;
+      h2 {
+        @include media-query.sp {
+          border-bottom: none;
+        }
+      }
+    }
+
+    & li:last-child .footer__sitemap-item{ //remove right border on last item of each section 
+      @include media-query.sp {
+        border-right: none;
+      }
+    }
+
+    &:last-child {  //customize the last section
+      @include media-query.sp {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        margin-left: -15px;
+      }
+      
+      .footer__sitemap-item { //set the right border
+        @include media-query.sp {
+          border-right: 2px solid color.$text;
+          line-height: 18px; 
+          margin: 10px 0;
+        }
+      }
+
+      h2:last-child {
+        @include media-query.sp {
+          border-right: none;
+        }
+      }
     }
   }
 
@@ -70,6 +157,20 @@
     line-height: function.getem(14, 22);
     margin-bottom: 10px;
     cursor: pointer;
+
+    @include media-query.sp { //inserting line on title for each section 
+      width: 100%;
+      border-bottom: 1px solid color.$text; 
+      line-height: 0.1em; 
+      margin: 10px 0 10px;  
+    }
+
+    & > span {
+      @include media-query.sp { //prevent overlap of line to the title
+        padding-right: 10px;
+        background: color.$very-light-gray; 
+      }
+    }
 
     &:hover {
       text-decoration: underline;
@@ -82,17 +183,31 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    @include media-query.sp {
+      flex-direction: row;
+      max-height: none;
+    }
   }
 
   &-list--two-columns {
     width: 240px;
+
+    @include media-query.sp {
+      width: 100%;
+    }
   }
 
   &-item {
     margin-left: 2px;
-   // margin-bottom: 5px;
     cursor: pointer;
     line-height: 1.8;
+
+    @include media-query.sp {
+      line-height: function.getem(14, 33);
+      padding: 0 15px;
+      border-right: 1px solid color.$text;
+    }
     
     &:hover {
       text-decoration: underline;
@@ -108,25 +223,47 @@
 
   &-logo {
     width: 163px;
+
+    @include media-query.sp {
+      width: 142.5px;
+    }
   }
 
   &-container {
     @include mixin.center;
     flex-direction: column;
     margin: 8px 0 12px 0;
+
+    @include media-query.sp {
+      margin: 6px 0 8px;
+    }
   }
 
   &-phone {
     font-size: 28px;
+
+    @include media-query.sp {
+      font-size: 16px;
+    }
   }
 
-  &-hours,
-  &-copyright {
+  &-hours{
     font-size: 14px;
+
+    @include media-query.sp {
+      font-size: 12px;
+    }
   }
 
   &-copyright {
     color: color.$gray;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-align: center;
+
+    @include media-query.sp {
+      font-size: 11px;
+      margin-bottom: 26px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 const toggler = () => {
   const header = document.querySelector(".js-header") as HTMLElement;
-  const main = document.querySelector('.section') as HTMLElement;
+  const html = document.querySelector('html') as HTMLElement;
 
   if (header) {
     const toggle = header.querySelector(".js-toggler");
@@ -13,15 +13,17 @@ const toggler = () => {
         if (header.classList.contains("is-active")) {
           header.classList.remove("is-active");
           console.log("not active"); //test
+          html.style.overflowY = 'visible';
         } else {
           header.classList.add("is-active");
           console.log("active"); //test
-          main.style.overflowY = 'hidden';
+          html.style.overflowY = 'hidden';
         }
       });
       
       header.addEventListener("mouseleave", () => {
         header.classList.remove("is-active");
+        html.style.overflowY = 'visible';
       });
     }
   }
