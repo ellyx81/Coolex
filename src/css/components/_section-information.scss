@@ -5,6 +5,11 @@
 
 .information {
   background-color: color.$very-light-blue;
+  padding-top: 20px;
+
+  @include media-query.sp {
+    padding-top: 0;
+  }
 
   &__category,
   &__content {
@@ -41,7 +46,7 @@
   line-height: function.getem(16, 28);
 
   @include media-query.sp {  
-    max-width: 190px;
+    max-width: 170px;
     font-size: 14px;
     line-height: function.getem(14, 14);
   }

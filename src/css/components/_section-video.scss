@@ -4,6 +4,15 @@
 @use 'settings/color' as color;
 @use 'settings/font-weight' as  font-weight;
 
+.video {
+  @include mixin.center;
+  margin-top: 20px;
+  
+  @include media-query.sp {
+    margin-top: 30px;
+  }
+}
+
 .video__container {
   @include mixin.center;
   gap: 25px;
@@ -34,6 +43,7 @@
 
   @include media-query.sp {
     height: 167px;
+    border-radius: 2.5px;
   }
 
   &:hover {

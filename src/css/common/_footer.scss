@@ -39,8 +39,9 @@
       height: auto;
       flex-direction: row;
       justify-content: flex-start;
-      gap: 20px;
-      padding: 16px 25px 22px 25px;
+      gap: 16px;
+      padding: 16px 25px 22px 18px;
+      border-radius: 2.5px;
     }
 
     &--blue {

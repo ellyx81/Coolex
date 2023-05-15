@@ -6,6 +6,11 @@
 .solutions {
   @include mixin.center;
   flex-direction: column;
+  margin-top: 20px;
+
+  @include media-query.sp {
+    margin-top: 30px;
+  }
 }
 
 .solutions__container {
@@ -120,6 +125,11 @@
   right: 23px;
   top: 45%;
   height: 34px;
+
+  @include media-query.sp {
+    height: 20px;
+    right: 10px;
+  }
 
   &:hover {
     opacity: .5;
