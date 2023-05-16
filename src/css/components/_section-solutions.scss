@@ -7,7 +7,6 @@
   @include mixin.center;
   flex-direction: column;
   margin-top: 20px;
-
   @include media-query.sp {
     margin-top: 30px;
   }
@@ -17,7 +16,6 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   @include media-query.sp {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -30,7 +28,6 @@
   padding: 25px 0;
   transition: transform 0.3s ease;
   overflow: hidden;
-
   @include media-query.sp { 
     height: 140px;
   }
@@ -79,7 +76,6 @@
   flex-direction: column;
   text-align: center;
   color: color.$primary;
-
   @include media-query.sp {
     margin-top: -5px;
   }
@@ -88,7 +84,6 @@
 .solutions__icon {
   height: 57px;
   margin-bottom: 10px;
-    
   @include media-query.sp {
     height: 34.5px;
     margin-bottom: 7px;
@@ -102,7 +97,6 @@
 
 .solutions__subtitle {
   font-size: 18px;
-
   @include media-query.sp {
     font-size: 14px;
     line-height: function.getem(14, 17);
@@ -111,7 +105,6 @@
 
 .solutions__title {
   font-size: 25px;
-
   @include media-query.sp {
     font-size: 18px;
     line-height: function.getem(18, 25);
@@ -125,7 +118,6 @@
   right: 23px;
   top: 45%;
   height: 34px;
-
   @include media-query.sp {
     height: 20px;
     right: 10px;

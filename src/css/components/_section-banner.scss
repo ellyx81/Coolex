@@ -16,9 +16,7 @@
 
 .banner__image {
   width: 100%;
-
   @include media-query.sp {
-    //height: 750px;
     object-fit: cover;
     content: url("../assets/sp-banner.png");
   }
@@ -31,7 +29,6 @@
   transform: translateY(-50%);
   padding: 0 10px;
   width: 100%;
-
   @include media-query.sp {
     display: none;
   }
@@ -56,7 +53,6 @@
   width: 100%;
   min-height: 160px;
   background-image: linear-gradient(color.$white, color.$light-blue);
-
   @include media-query.sp {
     min-height: 220px;
     padding: 37px 0;
@@ -75,7 +71,6 @@
   font-size: 28px;
   line-height: function.getem(28, 40);
   margin-bottom: 5px;
-  
   @include media-query.sp {
     font-size: 25px;
     line-height: function.getem(25, 26);
@@ -87,7 +82,6 @@
   font-weight: font-weight.$regular;
   font-size: 18px;
   line-height: function.getem(9, 15);
-
   @include media-query.sp {
     font-size: 16px;
     line-height: function.getem(16, 24);
@@ -95,7 +89,6 @@
 
   &:last-child {
     display: block;
-
     @include media-query.sp {
       display: none;
     }
@@ -103,7 +96,6 @@
 
   &--sp {
     display: none;
-  
     @include media-query.sp {
       display: block;
     }

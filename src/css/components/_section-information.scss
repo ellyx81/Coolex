@@ -6,7 +6,6 @@
 .information {
   background-color: color.$very-light-blue;
   padding-top: 20px;
-
   @include media-query.sp {
     padding-top: 0;
   }
@@ -26,7 +25,6 @@
   padding: 14px 0;
   border-top: 1px solid rgba(color.$black, .5);
   align-items: flex-start;
-
   @include media-query.sp {
     flex-direction: column;
     gap: 10px;
@@ -44,7 +42,6 @@
   align-items: flex-start;
   font-size: 16px;
   line-height: function.getem(16, 28);
-
   @include media-query.sp {  
     max-width: 170px;
     font-size: 14px;
@@ -56,7 +53,6 @@
   font-size: 18px;
   line-height: function.getem(18, 26);
   cursor: pointer;
-
   @include media-query.sp {  
     font-size: 14px;
     line-height: function.getem(14, 19);

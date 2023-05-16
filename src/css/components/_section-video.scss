@@ -7,7 +7,6 @@
 .video {
   @include mixin.center;
   margin-top: 20px;
-  
   @include media-query.sp {
     margin-top: 30px;
   }
@@ -16,7 +15,6 @@
 .video__container {
   @include mixin.center;
   gap: 25px;
-
   @include media-query.sp {
     flex-direction: column;
     padding: 0 28px;
@@ -40,7 +38,6 @@
   border-radius: 5px;
   overflow: hidden;
   transition: transform 0.3s ease;
-
   @include media-query.sp {
     height: 167px;
     border-radius: 2.5px;
@@ -61,7 +58,6 @@
 .video__icon {
   position: absolute;
   width: 78px;
-
   @include media-query.sp {
     width: 65px;
   }
@@ -75,7 +71,6 @@
   font-size: 18px;
   font-weight: font-weight.$bold;
   line-height: function.getem(18, 24);
-
   @include media-query.sp {
     font-size: 16px;
     line-height: function.getem(16, 22);
@@ -86,7 +81,6 @@
   font-size: 16px;
   font-weight: font-weight.$regular;
   line-height: function.getem(16, 24);
-
   @include media-query.sp {
     font-size: 14px;
     line-height: function.getem(14, 22);

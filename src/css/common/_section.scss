@@ -4,11 +4,9 @@
 .section {
   position: relative;
   top: size.$header-desktop;
-
   @include media-query.mx1200 {
     top: size.$header-mx1200;
   }
-
   @include media-query.sp {
     top: size.$header-sp;
   }

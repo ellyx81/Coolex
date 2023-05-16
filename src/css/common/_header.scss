@@ -13,12 +13,10 @@
   position: fixed;
   display: flex;
   z-index: 3;
-  
   @media screen and (max-width: 1200px) {
     height: size.$header-mx1200;
   }
-
-  @include media-query.sp {
+  @include media-query.mx980 {
     height: size.$header-sp;    
     
     &.is-active {
@@ -49,11 +47,9 @@
 
 .header__logo {
   margin: 0 25px;
-  
   @media screen and (max-width: 1200px) {
     margin: 0 10px;
   }
-
   @include media-query.sp {
     margin: 0 4px;
   }
@@ -61,11 +57,9 @@
   img {
     height: size.$header-desktop;;
     cursor: pointer;
-
     @media screen and (max-width: 1200px) {
       height: size.$header-mx1200;
     }
-
     @include media-query.sp {
       height: size.$header-sp;
     }
@@ -81,17 +75,14 @@
   font-weight: font-weight.$regular;
   color: color.$white;
   position: relative;
-
   @media screen and (max-width: 1440px){
     font-size: 15px;
     padding-left: 5px;
   }
-  
   @media screen and (max-width: 1200px) {
     font-size: 12px;
     padding-left: 0;
   }
-
   @include media-query.mx980 {
     flex-direction: column;
     position: absolute;
@@ -111,7 +102,6 @@
 .header__nav {
   display: flex;
   flex: 70%;
-  
   @include media-query.mx980 {
     flex-direction: column; 
     flex: 0;
@@ -125,14 +115,12 @@
 
 .header__nav-item {
   display: flex;
-  
   @include media-query.mx980 {
     flex-direction: column;
   }
   
   &:last-child { //the last navigation item is present in sp view but isn't present on desktop
     display: none;
-
     @include media-query.mx980 {
       display: flex;
     }
@@ -145,7 +133,6 @@
 
     .header__dropdown { //hover selector is present on desktop view but shouldn't be in sp view
       display: block;
-  
       @include media-query.mx980 {
         display: none;
       }
@@ -155,7 +142,6 @@
 
 .header__main-menu {
   @include media-query.mx980 {
-    
     //main menu item active state
     &.is-active {
       .header__nav-item-icon {
@@ -174,7 +160,6 @@
 .header__sub-menu {
   @include mixin.center;
   justify-content:flex-start;
-
   @include media-query.mx980 {
     padding: 10px;
     height: auto;
@@ -204,7 +189,6 @@
   height: 9px;
   margin: 8px 4px 8px 10px;
   transition: transform .3s;
-
   @include media-query.mx980 {
     display: block;
   }
@@ -215,11 +199,9 @@
   margin: 0 30px 0 10px;
   position: relative;
   cursor: pointer;
-
   @media screen and (max-width: 1440px) {
     margin: 0 20px 0 5px;
   }
-
   @include media-query.mx980 {
     display: flex;
     justify-content: flex-start;
@@ -231,16 +213,13 @@
   display: none;
   position: absolute;
   top: size.$header-desktop;
-
   @media screen and (max-width: 1440px) {
     width: 110px;
   }
-
   @media screen and (max-width: 1200px) {
     top: size.$header-mx1200;
     width: 80px;
   }
-
   @include media-query.mx980 {
     display: none;
     position: relative;
@@ -256,21 +235,19 @@
     padding: 8px 10px;
     text-decoration: none;
     display: block;
-
-    &:hover {
-      background-image: linear-gradient(color.$primary, color.$dark-blue);
-
-      @include media-query.mx980 {
-        background-image: none;
-      }  
-    }
-
     @include media-query.mx980 {    
       font-size: 18px;
       background-image: none;
       width: auto;
       padding-left: 0;
       margin-left: -2px;
+    }
+
+    &:hover {
+      background-image: linear-gradient(color.$primary, color.$dark-blue);
+      @include media-query.mx980 {
+        background-image: none;
+      }  
     }
   }
 }
@@ -279,7 +256,6 @@
 .header__btn-container {
   display: flex;
   justify-content: space-evenly;
-
   @include media-query.mx980 {
     background-color: color.$white;
     justify-content: center;
@@ -298,16 +274,13 @@
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
-
   @media screen and (max-width: 1440px) {
     width: 180px;
   }
-
   @media screen and (max-width: 1200px) {
     width: 140px;
     height: 70px;
   }
-  
   @include media-query.mx980 {
     width: 127px;
     height: 85px;
@@ -328,16 +301,13 @@
     font-weight: font-weight.$black;
     line-height: 1;
     cursor: pointer;
-
     @media screen and (max-width: 1440px) { 
       font-size: 18px;
       margin-bottom: 5px;
     }
-
     @media screen and (max-width: 1200px) {
       font-size: 16px;
     }
-
     @include media-query.mx980 {
       font-size: 20px;
       font-weight: function.getem(20, 25);
@@ -348,7 +318,6 @@
   &__subheading-container {
     @include mixin.center;
     cursor: pointer;
-
     @include media-query.mx980 {
       @include mixin.center;
       flex-direction: column;
@@ -359,15 +328,12 @@
   &__subheading {
     font-size: 19px;
     cursor: pointer;
-
     @media screen and (max-width: 1440px) { 
       font-size: 16px;
     }
-
     @media screen and (max-width: 1200px) {
       font-size: 12px;
     }
-
     @include media-query.mx980 {
       font-size: 15px;
     }
@@ -375,15 +341,12 @@
 
   &__subheading--small {
     font-size: 16px;
-
     @media screen and (max-width: 1440px) { 
       font-size: 14px;
     }
-
     @media screen and (max-width: 1200px) {
       font-size: 10px;
     }
-
     @include media-query.mx980 {
       font-size: 12px;
     }
@@ -418,7 +381,6 @@
   &:after {
     box-shadow: 0 calc(size.$toggler-offset / -1.4) 0 0 color.$secondary;
   }
-
   @include media-query.mx980 {
     display: block;
   }
