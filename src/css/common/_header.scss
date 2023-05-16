@@ -13,7 +13,7 @@
   position: fixed;
   display: flex;
   z-index: 3;
-  @media screen and (max-width: 1200px) {
+  @include media-query.mx1200  {
     height: size.$header-mx1200;
   }
   @include media-query.mx980 {
@@ -47,7 +47,7 @@
 
 .header__logo {
   margin: 0 25px;
-  @media screen and (max-width: 1200px) {
+  @include media-query.mx1200  {
     margin: 0 10px;
   }
   @include media-query.sp {
@@ -57,7 +57,7 @@
   img {
     height: size.$header-desktop;;
     cursor: pointer;
-    @media screen and (max-width: 1200px) {
+    @include media-query.mx1200  {
       height: size.$header-mx1200;
     }
     @include media-query.sp {
@@ -75,11 +75,11 @@
   font-weight: font-weight.$regular;
   color: color.$white;
   position: relative;
-  @media screen and (max-width: 1440px){
+  @include media-query.mx1440 {
     font-size: 15px;
     padding-left: 5px;
   }
-  @media screen and (max-width: 1200px) {
+  @include media-query.mx1200  {
     font-size: 12px;
     padding-left: 0;
   }
@@ -199,7 +199,7 @@
   margin: 0 30px 0 10px;
   position: relative;
   cursor: pointer;
-  @media screen and (max-width: 1440px) {
+  @include media-query.mx1440  {
     margin: 0 20px 0 5px;
   }
   @include media-query.mx980 {
@@ -213,10 +213,10 @@
   display: none;
   position: absolute;
   top: size.$header-desktop;
-  @media screen and (max-width: 1440px) {
+  @include media-query.mx1440  {
     width: 110px;
   }
-  @media screen and (max-width: 1200px) {
+  @include media-query.mx1200  {
     top: size.$header-mx1200;
     width: 80px;
   }
@@ -273,10 +273,10 @@
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  @media screen and (max-width: 1440px) {
+  @include media-query.mx1440  {
     width: 180px;
   }
-  @media screen and (max-width: 1200px) {
+  @include media-query.mx1200  {
     width: 140px;
     height: 70px;
   }
@@ -300,11 +300,11 @@
     font-weight: font-weight.$black;
     line-height: 1;
     cursor: pointer;
-    @media screen and (max-width: 1440px) { 
+    @include media-query.mx1440  { 
       font-size: 18px;
       margin-bottom: 5px;
     }
-    @media screen and (max-width: 1200px) {
+    @include media-query.mx1200  {
       font-size: 16px;
     }
     @include media-query.mx980 {
@@ -327,10 +327,10 @@
   &__subheading {
     font-size: 19px;
     cursor: pointer;
-    @media screen and (max-width: 1440px) { 
+    @include media-query.mx1440  { 
       font-size: 16px;
     }
-    @media screen and (max-width: 1200px) {
+    @include media-query.mx1200  {
       font-size: 12px;
     }
     @include media-query.mx980 {
@@ -340,10 +340,10 @@
 
   &__subheading--small {
     font-size: 16px;
-    @media screen and (max-width: 1440px) { 
+    @include media-query.mx1440  { 
       font-size: 14px;
     }
-    @media screen and (max-width: 1200px) {
+    @include media-query.mx1200  {
       font-size: 10px;
     }
     @include media-query.mx980 {

@@ -21,6 +21,7 @@
   margin-top: -50px;
   @include media-query.sp {
     flex-direction: column;
+    gap: 11px;
   }
   
   &-card {
