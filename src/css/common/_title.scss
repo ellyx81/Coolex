@@ -24,6 +24,16 @@
       line-height: function.getem(26, 34);
       padding: 0 10px;
     }
+    @include media-query.mx370 {
+      font-size: 20px;
+    }
+
+    .title__break {
+      display: none;
+      @include media-query.sp {
+        display: block;
+      }
+    }
   }
 
   &__decoration {

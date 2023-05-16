@@ -16,7 +16,7 @@
 .case-studies__container {
   @include mixin.center;
   width: 100%;
-  @include media-query.sp{
+  @include media-query.sp {
     flex-direction: column;
   }
 }
@@ -26,14 +26,14 @@
   height: 364px;
   position: relative;
   overflow: hidden;
-  @include media-query.sp{
+  @include media-query.sp {
     height: 260px;
     width: 100%;
   }
 
   &:not(:last-child) {
     border-right: 1px solid color.$white;
-    @include media-query.sp{
+    @include media-query.sp {
       border-bottom: 1px solid color.$white;
     }
   }
@@ -53,7 +53,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  @include media-query.sp{
+  @include media-query.sp {  
     height: 260px;
   }
 }
@@ -68,7 +68,10 @@
   height: 138px;
   color: color.$white;
   padding: 25px;
-  @include media-query.sp{
+  @include media-query.mx1200 {
+    padding: 22px;
+  }
+  @include media-query.sp {
     height: 100px;
     padding: 15px 23px;
   }
@@ -78,6 +81,9 @@
   font-size: 26px;
   font-weight: font-weight.$bold;
   line-height: 1;
+  @include media-query.mx1200 {
+    font-size: 22px;
+  }
   @include media-query.sp{
     font-size: 18px;
   }
@@ -93,7 +99,9 @@
   }
 
   & > .case-studies__subtitle {
-    margin-left: 10px;
+    @include media-query.sp {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -104,7 +112,10 @@
 .case-studies__subtitle {
   font-size: 16px;
   line-height: function.getem(16, 22);
-  @include media-query.sp{
+  @include media-query.mx1200 {
+    font-size: 14px;
+  }
+  @include media-query.sp {
     font-size: 14px;
     line-height: function.getem(14, 20);
   }

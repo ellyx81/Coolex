@@ -1,7 +1,7 @@
 mixin title(text)
   .title
     .title__decoration
-    h2.title__text= text 
+    h2.title__text!= text 
     .title__decoration.title__decoration--right
 
 mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title)
@@ -9,7 +9,7 @@ mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title
     img(src= solutionsImg, alt="").solutions__img 
     .solutions__content 
       img(src= solutionsIcon, alt="").solutions__icon
-      img(src= solutionsWhiteIcon, alt="").solutions__icon--white
+      img(src= solutionsWhiteIcon, alt="").solutions__icon.solutions__icon--white
       p.solutions__subtitle!= subtitle
       p.solutions__title= title 
     img(src="assets/arrow-right-01.svg", alt="").solutions__right-arrow

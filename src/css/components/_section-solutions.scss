@@ -88,11 +88,10 @@
     height: 34.5px;
     margin-bottom: 7px;
   }
-}
 
-.solutions__icon--white {
-  @extend .solutions__icon;
-  display: none;
+  &--white {
+    display: none;
+  }
 }
 
 .solutions__subtitle {

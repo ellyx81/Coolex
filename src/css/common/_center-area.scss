@@ -5,7 +5,7 @@
   width: 100%;
 	max-width: 980px;
 	margin: auto;
-	@include media-query.sp {
+	@include media-query.mx1200 {
 		padding: 0 20px;
 	}
 }

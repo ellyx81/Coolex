@@ -226,7 +226,6 @@
     top: 0;
     width: 100%;
     margin-top: -8px;
-   // padding-bottom: 20px;
   }
 
   &-item {
@@ -259,12 +258,12 @@
   @include media-query.mx980 {
     background-color: color.$white;
     justify-content: center;
-    padding: 18px 0 50px 0;
+    padding: 18px 0 50px;
   }
 }
 
 .btn {
-  margin: -10px 5px 0 5px;
+  margin: -10px 5px 0;
   width: 210px;
   height: 80px;
   background-image: linear-gradient(color.$secondary, color.$primary);
@@ -311,7 +310,7 @@
     @include media-query.mx980 {
       font-size: 20px;
       font-weight: function.getem(20, 25);
-      margin: 0 0 2px 0;
+      margin-bottom: 2px;
     }
   }
 

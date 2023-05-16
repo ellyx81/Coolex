@@ -87,14 +87,8 @@
     line-height: function.getem(16, 24);
   }
 
-  &:last-child {
-    display: block;
-    @include media-query.sp {
-      display: none;
-    }
-  }
-
-  &--sp {
+  .banner__break:nth-child(1),
+  .banner__break:nth-child(3) {
     display: none;
     @include media-query.sp {
       display: block;
