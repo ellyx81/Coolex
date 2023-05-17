@@ -16,10 +16,15 @@
 
 .banner__image {
   width: 100%;
+  height: auto;
   @include media-query.sp {
     object-fit: cover;
     content: url("../assets/sp-banner.png");
   }
+}
+
+.splide__pagination {
+  bottom: 0;
 }
 
 //slider buttons
