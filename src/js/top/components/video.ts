@@ -18,7 +18,7 @@ const videoPlayer = () => {
        close.addEventListener("click", () => {
          video.classList.remove("is-opened");
          html.style.overflowY = 'visible';
-         vidFrame.setAttribute('src', originalSrc);
+         vidFrame.setAttribute('src', originalSrc); //stop the video by refreshing the url
        })
     })
   }

@@ -65,45 +65,9 @@ block content
       .center-area 
         +title("ムービーギャラリー")
         .video__container
-          .video__item
-            .video__thumbnail-container
-              img(src= "assets/thumbnail1.png", alt="").video__thumbnail-image
-              img(src="assets/youtube-icon.svg", alt="").video__icon
-            .video__text-container
-              h2.video__heading= "アーム架台"
-              h3.video__subheading= "床面にホースを這わすことなく使用できるオプション"
-          .video__player-overlay  
-            img(src="assets/exit-01.svg", alt="").video__close
-            .video__player
-              iframe(width="800" height="500" src="https://www.youtube.com/embed/SDno1HI0pAE" title="YouTube video player" frameborder="0" allowfullscreen).video__frame
-
-
-          .video__item
-            .video__thumbnail-container
-              img(src= "assets/thumbnail2.png", alt="").video__thumbnail-image
-              img(src="assets/youtube-icon.svg", alt="").video__icon
-            .video__text-container
-              h2.video__heading= "アーム架台"
-              h3.video__subheading= "床面にホースを這わすことなく使用できるオプション"
-          .video__player-overlay  
-            img(src="assets/exit-01.svg", alt="").video__close
-            .video__player
-              iframe(width='800', height='500', src='https://www.youtube.com/embed/moFB-j5iY2E', title='YouTube video player', frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowfullscreen='').video__frame
-
-          
-          .video__item
-            .video__thumbnail-container
-              img(src= "assets/thumbnail3.png", alt="").video__thumbnail-image
-              img(src="assets/youtube-icon.svg", alt="").video__icon
-            .video__text-container
-              h2.video__heading= "アーム架台"
-              h3.video__subheading= "床面にホースを這わすことなく使用できるオプション" 
-          .video__player-overlay  
-            img(src="assets/exit-01.svg", alt="").video__close
-            .video__player
-              iframe(width='800', height='500', src='https://www.youtube.com/embed/hxl73VEZ21I', title='YouTube video player', frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowfullscreen='').video__frame
-
-        
+          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/SDno1HI0pAE")
+          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/moFB-j5iY2E")
+          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/hxl73VEZ21I")
         +see-all-btn("ムービー一覧")
       
 block script
