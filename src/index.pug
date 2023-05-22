@@ -2,20 +2,36 @@ extends includes/layout.pug
 include includes/mixin.pug
 block content
   main.section
-    section.banner
-      .banner__top-container
-        img(src='assets/banner-image.png', alt="").banner__image
-        .banner__slider
-          img(src="assets/arrow-left-01.svg", alt="").banner__slider-btn
-          img(src="assets/arrow-right-01.svg", alt="").banner__slider-btn.banner__slider-btn--right
+    section.banner 
+      .banner__top-container.splide
+        .splide__track
+          ul.splide__list
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+        .banner__slider.splide__arrows
+          .splide__arrow.splide__arrow--prev
+            img(src="assets/arrow-left-01.svg", alt="")
+          .splide__arrow.splide__arrow--next
+            img(src="assets/arrow-right-01.svg", alt="")
       .banner__lower-container
         .banner__text-container
-          h1.banner__title 作業者のみを確実に冷やす  
-          h2.banner__subtitle COOLEXは最も効率的かつ効果的な冷却ソリューション! #[br]
-            | お客様の作業現場・目的に合わせたラインアップを豊富に揃えています
+          h1.banner__title 作業者のみを確実に冷やす
+          h2.banner__subtitle COOLEXは最も効率的かつ#[br.banner__break]効果的な冷却ソリューション! #[br.banner__break]
+            | お客様の作業現場・目的に合わせた#[br.banner__break]ラインアップを豊富に揃えています。
 
     section.solutions 
-      +title("どんな用途でお悩みですか？")
+      .center-area
+        +title("どんな用途で <br class='title__break'> お悩みですか？")
       .solutions__container 
         +solutions("assets/photo-1.png", "assets/1.svg", "assets/1-white.svg", "熱源があり <br> 輻射熱の影響を受ける", "鉄鋼工場")
         +solutions("assets/photo-2.png", "assets/2.svg", "assets/2-white.svg", "衛生服とマスクが必須で <br> 蒸し暑い", "食品工場")
@@ -27,7 +43,8 @@ block content
         +solutions("assets/photo-8.png", "assets/8.svg", "assets/8-white.svg", "たくさんの作業者を <br> 冷やしたい", "多人数使用モデル")
 
     section.case-studies
-      +title("導入事例")
+      .center-area
+        +title("導入事例")
       .case-studies__container 
         +case-study("assets/p1.png", "COOLEX-1", "（酷暑作業向け）", "大和ハウス工業株式会社 <br> 新潟工場 様")
         +case-study("assets/p2.png", "COOLEX-Multi", "（複数名同時冷却）", "黒崎播磨株式会社 <br> &nbsp;&nbsp;（⽇本製鉄 &nbsp;（株）&nbsp; 名古屋製鉄所 様内）&nbsp; 様")
@@ -44,15 +61,14 @@ block content
           +information("2020.08.24", "ニュース", "2022年の新卒採用をスタートしました", "information__category--orange")
         +see-all-btn("インフォメーション一覧")
 
-    section.video
+    section.video.js-video
       .center-area 
         +title("ムービーギャラリー")
         .video__container
-          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
-          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
-          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
+          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/SDno1HI0pAE")
+          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/moFB-j5iY2E")
+          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/hxl73VEZ21I")
         +see-all-btn("ムービー一覧")
-              
-        
+      
 block script
   script(src="js/top/index.ts")
