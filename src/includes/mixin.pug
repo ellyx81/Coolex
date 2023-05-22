@@ -1,9 +1,68 @@
+mixin title(text)
+  .title
+    .title__decoration
+    h2.title__text!= text 
+    .title__decoration.title__decoration--right
+
 mixin solutions(solutionsImg, solutionsIcon, solutionsWhiteIcon, subtitle, title)
   a(href="#").solutions__tile
     img(src= solutionsImg, alt="").solutions__img 
     .solutions__content 
       img(src= solutionsIcon, alt="").solutions__icon
-      img(src= solutionsWhiteIcon, alt="").solutions__icon--white
+      img(src= solutionsWhiteIcon, alt="").solutions__icon.solutions__icon--white
       p.solutions__subtitle!= subtitle
       p.solutions__title= title 
     img(src="assets/arrow-right-01.svg", alt="").solutions__right-arrow
+
+mixin case-study(image, title, subtitle, bottomSubtitle)
+  a(href="#").case-studies__item
+    img(src= image, alt="").case-studies__img
+    .case-studies__overlay
+      .case-studies__upper-text
+        h2.case-studies__title= title
+        span.case-studies__subtitle= subtitle
+      .case-studies__lower-text
+        span.case-studies__subtitle!= bottomSubtitle
+
+mixin see-all-btn(text) 
+  .btn-area
+    a(href="#").see-all-btn
+      .see-all-btn__icon
+      .see-all-btn__text= text
+
+mixin information(date, category, content, modifier="")
+  .information__details
+    .information__lead
+      span.information__date= date
+      a(href="#" class= modifier).information__category= category
+    a(href="#").information__content!= content
+
+mixin video(thumbnail, heading, subheading, videoUrl)
+  .video__item.js-video-item
+    .video__thumbnail-container
+      img(src= thumbnail, alt="").video__thumbnail-image
+      img(src="assets/youtube-icon.svg", alt="").video__icon
+    .video__text-container
+      h2.video__heading= heading
+      h3.video__subheading= subheading
+  .video__player-overlay  
+    img(src="assets/exit-01.svg", alt="").video__close.js-video-close
+    .video__player
+      iframe(src= videoUrl title="YouTube video player" frameborder="0" allowfullscreen='').video__frame.js-video-frame
+
+mixin plan-card(icon, heading, subheading, modifier="")
+  .footer__plan-card(class= modifier)
+    img(src= icon, alt="").footer__plan-icon
+    .footer__plan-text
+      h2.footer__plan-heading= heading
+      h3.footer__plan-subheading!= subheading
+
+mixin sitemap-section(modifier, title, ...items)
+  .footer__sitemap-section 
+    h2.footer__sitemap-title
+      span= title
+    ul.footer__sitemap-list(class= modifier)
+      each item in items 
+        li
+          a(href="#").footer__sitemap-item
+            span= item

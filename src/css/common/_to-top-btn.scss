@@ -1,0 +1,30 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
+@use 'settings/color' as color;
+
+.footer__back-to-top {
+  @include mixin.center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: color.$primary;
+  z-index: 2;
+  @include media-query.sp {
+    width: 50.5px;
+    height: 50.5px;
+  }
+
+  &-icon {
+    width: 30px;
+    @include media-query.sp {
+      width: 25px;
+    }
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+}
