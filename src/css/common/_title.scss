@@ -1,0 +1,52 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'tools/media-queries' as media-query;
+@use 'settings/color' as color;
+@use 'settings/font-weight' as font-weight;
+
+.title {
+  @include mixin.center;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  @include media-query.sp {
+    padding: 24px 0;
+  }
+
+  &__text {
+    font-weight: font-weight.$bold;
+    font-size: 28px;
+    line-height: function.getem(28, 40);
+    color: color.$primary;
+    padding: 0 20px;
+    @include media-query.sp {
+      font-size: 26px;
+      line-height: function.getem(26, 34);
+      padding: 0 10px;
+    }
+    @include media-query.mx370 {
+      font-size: 20px;
+    }
+
+    .title__break {
+      display: none;
+      @include media-query.sp {
+        display: block;
+      }
+    }
+  }
+
+  &__decoration {
+    height: 28px;
+    min-width: calc(28*2) + px;
+    background: linear-gradient(to right, color.$primary 50%, color.$secondary 50%);
+    @include media-query.sp {
+      height: 23px;
+      min-width: 46px
+    }
+  
+    &--right {
+      background: linear-gradient(to right, color.$secondary 50%, color.$primary 50%);
+    }
+  }
+}

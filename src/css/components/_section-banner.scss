@@ -1,12 +1,8 @@
 @use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
 @use 'tools/function' as function;
 @use 'settings/color' as color;
 @use 'settings/font-weight' as font-weight;
-
-.section {
-  position: relative;
-  top: 60px;
-}
 
 .banner {
   @include mixin.center;
@@ -20,27 +16,32 @@
 
 .banner__image {
   width: 100%;
+  height: auto;
+  @include media-query.sp {
+    object-fit: cover;
+    content: url("../assets/sp-banner.png");
+  }
 }
 
 //slider buttons
-.banner__slider {
+
+.splide__arrows {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0px 10px;
+  padding: 0 10px;
   width: 100%;
+  @include media-query.sp {
+    display: none;
+  }
   
   img {
     height: 55px;
     cursor: pointer;
   }
 
-  &-btn:hover {
-      opacity: .5;
-    }
-  
-  &-btn--right {
-    float: right;
+  .splide__arrow:hover {
+    opacity: .5;
   }
 }
 
@@ -48,13 +49,19 @@
 .banner__lower-container {
   @include mixin.center;
   width: 100%;
-  height: 160px;
+  min-height: 160px;
   background-image: linear-gradient(color.$white, color.$light-blue);
+  @include media-query.sp {
+    min-height: 220px;
+    padding: 37px 0;
+  }
 }
 
 .banner__text-container {
   text-align: center;
   color: color.$primary;
+  @include mixin.center;
+  flex-direction: column;
 }
 
 .banner__title {
@@ -62,10 +69,30 @@
   font-size: 28px;
   line-height: function.getem(28, 40);
   margin-bottom: 5px;
+  @include media-query.sp {
+    font-size: 25px;
+    line-height: function.getem(25, 26);
+    margin-bottom: 12px;
+  }
 }
 
 .banner__subtitle {
   font-weight: font-weight.$regular;
   font-size: 18px;
-  line-height: function.getem(18, 30);
+  line-height: function.getem(9, 15);
+  @include media-query.sp {
+    font-size: 16px;
+    line-height: function.getem(16, 24);
+  }
+
+  .banner__break:nth-child(1),
+  .banner__break:nth-child(3) {
+    display: none;
+    @include media-query.sp {
+      display: block;
+    }
+  }
 }
+
+
+
