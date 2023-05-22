@@ -1,5 +1,12 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
+
 .center-area {
-	width: 100%;
+  width: 100%;
 	max-width: 980px;
+	margin: auto;
+	@include media-query.mx1200 {
+		padding: 0 20px;
+	}
 }
   
