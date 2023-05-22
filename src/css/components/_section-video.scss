@@ -109,6 +109,10 @@
   }
   @media screen and (max-width: 560px) {
     height: 200px;
+    width: 360px;
+  }
+  @include media-query.mx370 {
+    height: 200px;
     width: 290px;
   }
 }
