@@ -16,6 +16,7 @@
 
 .banner__image {
   width: 100%;
+  height: auto;
   @include media-query.sp {
     object-fit: cover;
     content: url("../assets/sp-banner.png");
@@ -23,7 +24,8 @@
 }
 
 //slider buttons
-.banner__slider {
+
+.splide__arrows {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -38,12 +40,8 @@
     cursor: pointer;
   }
 
-  &-btn:hover {
-      opacity: .5;
-    }
-  
-  &-btn--right {
-    float: right;
+  .splide__arrow:hover {
+    opacity: .5;
   }
 }
 

@@ -2,12 +2,27 @@ extends includes/layout.pug
 include includes/mixin.pug
 block content
   main.section
-    section.banner
-      .banner__top-container
-        img(src='assets/banner-image.png', alt="").banner__image
-        .banner__slider
-          img(src="assets/arrow-left-01.svg", alt="").banner__slider-btn
-          img(src="assets/arrow-right-01.svg", alt="").banner__slider-btn.banner__slider-btn--right
+    section.banner 
+      .banner__top-container.splide
+        .splide__track
+          ul.splide__list
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+        .banner__slider.splide__arrows
+          .splide__arrow.splide__arrow--prev
+            img(src="assets/arrow-left-01.svg", alt="")
+          .splide__arrow.splide__arrow--next
+            img(src="assets/arrow-right-01.svg", alt="")
       .banner__lower-container
         .banner__text-container
           h1.banner__title 作業者のみを確実に冷やす
@@ -46,15 +61,14 @@ block content
           +information("2020.08.24", "ニュース", "2022年の新卒採用をスタートしました", "information__category--orange")
         +see-all-btn("インフォメーション一覧")
 
-    section.video
+    section.video.js-video
       .center-area 
         +title("ムービーギャラリー")
         .video__container
-          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
-          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
-          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション")
+          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/SDno1HI0pAE")
+          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/moFB-j5iY2E")
+          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/hxl73VEZ21I")
         +see-all-btn("ムービー一覧")
-              
-        
+      
 block script
   script(src="js/top/index.ts")
