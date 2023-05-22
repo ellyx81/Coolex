@@ -1,13 +1,13 @@
 const videoPlayer = () => {
-  const html = document.querySelector('html') as HTMLElement;
-  const parent = document.querySelector(".video");
+  const html = document.querySelector('.js-html') as HTMLElement;
+  const parent = document.querySelector(".js-video");
   if (parent) {
-    const videos = parent.querySelectorAll(".video__item");
+    const videos = parent.querySelectorAll(".js-video-item");
 
     videos.forEach((video) => {
       const videoOverlay = video.nextElementSibling as HTMLElement;
-      const close = videoOverlay.querySelector(".video__close") as HTMLElement;
-      const vidFrame = videoOverlay.querySelector('.video__frame') as HTMLElement;
+      const close = videoOverlay.querySelector(".js-video-close") as HTMLElement;
+      const vidFrame = videoOverlay.querySelector('.js-video-frame') as HTMLElement;
       const originalSrc = vidFrame.getAttribute('src') as string;
       
       video.addEventListener("click", () => { //open the video
