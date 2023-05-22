@@ -1,9 +1,11 @@
-import test from './components/test'
+import slider from './components/slider'
+import videoPlayer from './components/video'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test()
+    slider()
+    videoPlayer()
   },
   false
 )
