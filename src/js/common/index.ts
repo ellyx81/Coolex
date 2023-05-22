@@ -1,9 +1,11 @@
-import test from './components/test'
+import toggler from './components/toggler'
+import dropdownCollapse from './components/dropdown'
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test()
+    toggler()
+    dropdownCollapse()
   },
   false
 )

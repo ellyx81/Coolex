@@ -1,0 +1,58 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/function' as function;
+@use 'tools/media-queries' as media-query;
+@use 'settings/color' as color;
+
+.btn-area {
+  @include mixin.center;
+  width: 100%;
+}
+
+.see-all-btn {
+  @include mixin.center;
+  color: color.$primary;
+  background-color: color.$white;
+  border: solid 1px color.$primary;
+  border-radius: 20px;
+  margin: 24px 0 20px auto;
+  padding: 4px 22px;
+  @include media-query.sp {
+    margin: 24px auto 40px;
+    padding: 10px 30px;
+  }
+
+  & * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: color.$white;
+    background-color: color.$primary;
+
+    .see-all-btn__icon {
+      background-image: url("../assets/arrow-right-white-small.svg");
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: function.getem(16, 28);
+    @include media-query.sp {
+      font-size: 14px;
+      line-height: function.getem(14, 14);
+    }
+  }
+
+  &__icon {
+    background-image: url("../assets/arrow-right-blue-01.svg");
+    margin-right: 8px;
+    height: 12px;
+    width: 7px;
+    background-repeat: no-repeat;
+    @include media-query.sp {
+      height: 9px;
+      width: 5px;
+      margin-right: 10px;
+    }
+  }
+}

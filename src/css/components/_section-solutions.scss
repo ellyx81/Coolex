@@ -1,0 +1,128 @@
+@use 'tools/mixin' as mixin;
+@use 'tools/media-queries' as media-query;
+@use 'tools/function' as function;
+@use 'settings/color' as color;
+
+.solutions {
+  @include mixin.center;
+  flex-direction: column;
+  margin-top: 20px;
+  @include media-query.sp {
+    margin-top: 30px;
+  }
+}
+
+.solutions__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include media-query.sp {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.solutions__tile {
+  height: 200px;
+  border: 1px solid rgba(color.$gray, .3);
+  background: linear-gradient(color.$white, color.$light-gray);
+  padding: 25px 0;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  @include media-query.sp { 
+    height: 140px;
+  }
+
+  & * {
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    border: none;
+    z-index: 1;
+
+    .solutions__img,
+    .solutions__right-arrow {
+      display: block;
+    }
+
+    .solutions__content {
+      color: color.$white;
+      transform: scale(.9);
+
+      .solutions__icon {
+        display: none;
+      }
+      
+      .solutions__icon--white {
+        display: block;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.solutions__img {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.solutions__content {
+  @include mixin.center;
+  flex-direction: column;
+  text-align: center;
+  color: color.$primary;
+  @include media-query.sp {
+    margin-top: -5px;
+  }
+}
+
+.solutions__icon {
+  height: 57px;
+  margin-bottom: 10px;
+  @include media-query.sp {
+    height: 34.5px;
+    margin-bottom: 7px;
+  }
+
+  &--white {
+    display: none;
+  }
+}
+
+.solutions__subtitle {
+  font-size: 18px;
+  @include media-query.sp {
+    font-size: 14px;
+    line-height: function.getem(14, 17);
+  }
+}
+
+.solutions__title {
+  font-size: 25px;
+  @include media-query.sp {
+    font-size: 18px;
+    line-height: function.getem(18, 25);
+    margin-top: 3px;
+  }
+}
+
+.solutions__right-arrow {
+  display: none;
+  position: absolute;
+  right: 23px;
+  top: 45%;
+  height: 34px;
+  @include media-query.sp {
+    height: 20px;
+    right: 10px;
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+}
