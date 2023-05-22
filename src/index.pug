@@ -1,5 +1,74 @@
 extends includes/layout.pug
+include includes/mixin.pug
 block content
-  | aaaasdasd
+  main.section
+    section.banner 
+      .banner__top-container.splide
+        .splide__track
+          ul.splide__list
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+            li.splide__slide
+              img(src='assets/banner-image.png', alt="").banner__image
+        .banner__slider.splide__arrows
+          .splide__arrow.splide__arrow--prev
+            img(src="assets/arrow-left-01.svg", alt="")
+          .splide__arrow.splide__arrow--next
+            img(src="assets/arrow-right-01.svg", alt="")
+      .banner__lower-container
+        .banner__text-container
+          h1.banner__title 作業者のみを確実に冷やす
+          h2.banner__subtitle COOLEXは最も効率的かつ#[br.banner__break]効果的な冷却ソリューション! #[br.banner__break]
+            | お客様の作業現場・目的に合わせた#[br.banner__break]ラインアップを豊富に揃えています。
+
+    section.solutions 
+      .center-area
+        +title("どんな用途で <br class='title__break'> お悩みですか？")
+      .solutions__container 
+        +solutions("assets/photo-1.png", "assets/1.svg", "assets/1-white.svg", "熱源があり <br> 輻射熱の影響を受ける", "鉄鋼工場")
+        +solutions("assets/photo-2.png", "assets/2.svg", "assets/2-white.svg", "衛生服とマスクが必須で <br> 蒸し暑い", "食品工場")
+        +solutions("assets/photo-3.png", "assets/3.svg", "assets/3-white.svg", "大量の粉塵・ <br> ヒュームが発生する", "溶接作業")
+        +solutions("assets/photo-4.png", "assets/4.svg", "assets/4-white.svg", "防爆エリアかつ風の <br> 対策ができない", "塗装ブース")
+        +solutions("assets/photo-5.png", "assets/5.svg", "assets/5-white.svg", "移動が多く <br> 暑さ対策が難しい", "メンテナンス作業")
+        +solutions("assets/photo-6.png", "assets/6.svg", "assets/6-white.svg", "運転者の <br> 暑さ対策が難しい", "フォークリフト作業")
+        +solutions("assets/photo-7.png", "assets/7.svg", "assets/7-white.svg", "とにかく安価に <br> おさえたい", "低価格モデル")
+        +solutions("assets/photo-8.png", "assets/8.svg", "assets/8-white.svg", "たくさんの作業者を <br> 冷やしたい", "多人数使用モデル")
+
+    section.case-studies
+      .center-area
+        +title("導入事例")
+      .case-studies__container 
+        +case-study("assets/p1.png", "COOLEX-1", "（酷暑作業向け）", "大和ハウス工業株式会社 <br> 新潟工場 様")
+        +case-study("assets/p2.png", "COOLEX-Multi", "（複数名同時冷却）", "黒崎播磨株式会社 <br> &nbsp;&nbsp;（⽇本製鉄 &nbsp;（株）&nbsp; 名古屋製鉄所 様内）&nbsp; 様")
+        +case-study("assets/p3.png", "COOLEX-Light", "（⼀般作業向け）", "エーケーエム株式会社 様")
+      .center-area
+        +see-all-btn("導入事例一覧")
+
+    section.information
+      .center-area
+        +title("インフォメーション")
+        .information__container
+          +information("2020.12.24", "商品情報", "COOLEX展示室 開設のお知らせ")
+          +information("2020.09.07", "メディア", "TIRI NEWS 2020年9月号掲v身体を直接冷却するCOOLEX-ProTIRI NEWS 2020年9月号 <br> 掲載 – 作業者の身体を直接冷却するCOOLEX-Pro", "information__category--green")
+          +information("2020.08.24", "ニュース", "2022年の新卒採用をスタートしました", "information__category--orange")
+        +see-all-btn("インフォメーション一覧")
+
+    section.video.js-video
+      .center-area 
+        +title("ムービーギャラリー")
+        .video__container
+          +video("assets/thumbnail1.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/SDno1HI0pAE")
+          +video("assets/thumbnail2.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/moFB-j5iY2E")
+          +video("assets/thumbnail3.png", "アーム架台", "床面にホースを這わすことなく使用できるオプション", "https://www.youtube.com/embed/hxl73VEZ21I")
+        +see-all-btn("ムービー一覧")
+      
 block script
   script(src="js/top/index.ts")
