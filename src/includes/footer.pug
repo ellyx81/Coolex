@@ -3,15 +3,23 @@ block contents
   footer.footer
     .center-area
       .footer__plan
-        +plan-card("assets/footer-1.svg", "お問い合わせ", "製品に関するご質問・お見積もりなど <br> お気軽にお問い合わせください")
-        +plan-card("assets/footer-2.svg", "無料で試してみる", "ご購入前にデモ機を実際の現場で <br> 1日お試しいただけます。", "footer__plan-card--blue")
-        +plan-card("assets/footer-3.svg", "1週間試してみる", "じっくり検討したい方は1週間 <br> 有料にてお試しいただけます。。", "footer__plan-card--blue")
+        +plan-card("assets/footer-1.svg", "お問い合わせ", "製品に関するご質問・お見積もりなど <br class='footer__plan-break'> お気軽にお問い合わせください")
+        +plan-card("assets/footer-2.svg", "無料で試してみる", "ご購入前にデモ機を実際の現場で  <br class='footer__plan-break'> 1日お試しいただけます。", "footer__plan-card--blue")
+        +plan-card("assets/footer-3.svg", "1週間試してみる", "じっくり検討したい方は1週間 <br class='footer__plan-break'> 有料にてお試しいただけます。", "footer__plan-card--blue")
       .footer__sitemap
         +sitemap-section("", "トップ")
         +sitemap-section("", "COOLEXとは", "コンセプト", "冷却効果")
         +sitemap-section("footer__sitemap-list--two-columns", "製品一覧", "COOLEX-Multi", "COOLEX-Pro", "COOLEX-1", "COOLEX-Light", "COOLEX-M131", "COOLEX-C131", "COOLEX1201", "COOLEX-V151", "ウェア・シート", "オプション")
         +sitemap-section("footer__sitemap-list--two-columns", "用途一覧", "鉄鋼工場", "食品工場", "溶接作業", "塗装ブース", "メンテナンス作業", "フォークリフト作業", "低価格モデル", "多人数使用モデル")
-        +sitemap-section("", "導入事例", "ムービーギャラリー", "会社情報", "インフォメーション")
+        .footer__sitemap-section 
+          a(href="#").footer__sitemap-item
+            span= "導入事例"
+          a(href="#").footer__sitemap-item
+            span= "ムービーギャラリー"
+          a(href="#").footer__sitemap-item
+            span= "会社情報"
+          a(href="#").footer__sitemap-item
+            span= "インフォメーション"
       .footer__contact
         img(src="assets/contact-logo.png", alt="").footer__contact-logo
         .footer__contact-container
